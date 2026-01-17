@@ -1,0 +1,3 @@
+vhdl work "programCounter.vhd"
+vhdl work "pcIncrementor.vhd"
+vhdl work "topLevel.vhd"

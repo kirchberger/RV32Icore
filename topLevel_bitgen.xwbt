@@ -1,0 +1,8 @@
+INTSTYLE=ise
+INFILE=/home/Alex/Documents/dailyprojects/RV32Icore/topLevel.ncd
+OUTFILE=/home/Alex/Documents/dailyprojects/RV32Icore/topLevel.bit
+FAMILY=Spartan6
+PART=xc6slx9-2csg324
+WORKINGDIR=/home/Alex/Documents/dailyprojects/RV32Icore
+LICENSE=WebPack
+USER_INFO=213694623_0_0_215

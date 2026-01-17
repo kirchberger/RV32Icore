@@ -1,0 +1,13 @@
+net "pc(0)" LOC = P15;
+net "pc(1)" LOC = P16;
+net "pc(2)" LOC = N15;
+net "pc(3)" LOC = N16;
+net "pc(4)" LOC = U17;
+net "pc(5)" LOC = U18;
+net "pc(6)" LOC = T17;
+net "pc(7)" LOC = T18;
+net "clk" LOC = M18;
+net "clk" PULLUP;
+net "enable" LOC = F17;
+net "enable" PULLUP;
+NET "clk" CLOCK_DEDICATED_ROUTE = FALSE;
