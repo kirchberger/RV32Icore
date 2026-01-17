@@ -5,14 +5,14 @@ Parameter TMPDIR set to xst/projnav.tmp
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.03 secs
+Total CPU time to Xst completion: 0.05 secs
  
 --> 
 Parameter xsthdpdir set to xst
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.03 secs
+Total CPU time to Xst completion: 0.05 secs
  
 --> 
 Reading design: topLevel.prj
@@ -108,6 +108,9 @@ Slice Utilization Ratio Delta      : 5
 =========================================================================
 *                          HDL Parsing                                  *
 =========================================================================
+Parsing VHDL file "/home/Alex/Documents/dailyprojects/RV32Icore/registerFile.vhd" into library work
+Parsing entity <registerFile>.
+Parsing architecture <Behavioral> of entity <registerfile>.
 Parsing VHDL file "/home/Alex/Documents/dailyprojects/RV32Icore/programMemory.vhd" into library work
 Parsing entity <programMemory>.
 Parsing architecture <Behavioral> of entity <programmemory>.
@@ -133,12 +136,111 @@ Elaborating entity <pcIncrementor> (architecture <Behavioral>) from library <wor
 
 Elaborating entity <programMemory> (architecture <Behavioral>) from library <work>.
 
+Elaborating entity <registerFile> (architecture <Behavioral>) from library <work>.
+WARNING:HDLCompiler:871 - "/home/Alex/Documents/dailyprojects/RV32Icore/registerFile.vhd" Line 16: Using initial value "00000000000000000000000000000001" for x0 since it is never assigned
+WARNING:HDLCompiler:871 - "/home/Alex/Documents/dailyprojects/RV32Icore/registerFile.vhd" Line 17: Using initial value "00000000000000000000000000000010" for x1 since it is never assigned
+WARNING:HDLCompiler:871 - "/home/Alex/Documents/dailyprojects/RV32Icore/registerFile.vhd" Line 18: Using initial value "00000000000000000000000000000011" for x2 since it is never assigned
+WARNING:HDLCompiler:871 - "/home/Alex/Documents/dailyprojects/RV32Icore/registerFile.vhd" Line 19: Using initial value "00000000000000000000000000000100" for x3 since it is never assigned
+WARNING:HDLCompiler:871 - "/home/Alex/Documents/dailyprojects/RV32Icore/registerFile.vhd" Line 20: Using initial value "00000000000000000000000000000101" for x4 since it is never assigned
+WARNING:HDLCompiler:871 - "/home/Alex/Documents/dailyprojects/RV32Icore/registerFile.vhd" Line 21: Using initial value "00000000000000000000000000000110" for x5 since it is never assigned
+WARNING:HDLCompiler:871 - "/home/Alex/Documents/dailyprojects/RV32Icore/registerFile.vhd" Line 22: Using initial value "00000000000000000000000000000111" for x6 since it is never assigned
+WARNING:HDLCompiler:871 - "/home/Alex/Documents/dailyprojects/RV32Icore/registerFile.vhd" Line 23: Using initial value "00000000000000000000000000001000" for x7 since it is never assigned
+WARNING:HDLCompiler:871 - "/home/Alex/Documents/dailyprojects/RV32Icore/registerFile.vhd" Line 24: Using initial value "00000000000000000000000000001001" for x8 since it is never assigned
+WARNING:HDLCompiler:871 - "/home/Alex/Documents/dailyprojects/RV32Icore/registerFile.vhd" Line 25: Using initial value "00000000000000000000000000001010" for x9 since it is never assigned
+WARNING:HDLCompiler:871 - "/home/Alex/Documents/dailyprojects/RV32Icore/registerFile.vhd" Line 26: Using initial value "00000000000000000000000000001011" for x10 since it is never assigned
+WARNING:HDLCompiler:871 - "/home/Alex/Documents/dailyprojects/RV32Icore/registerFile.vhd" Line 27: Using initial value "00000000000000000000000000001100" for x11 since it is never assigned
+WARNING:HDLCompiler:871 - "/home/Alex/Documents/dailyprojects/RV32Icore/registerFile.vhd" Line 28: Using initial value "00000000000000000000000000001101" for x12 since it is never assigned
+WARNING:HDLCompiler:871 - "/home/Alex/Documents/dailyprojects/RV32Icore/registerFile.vhd" Line 29: Using initial value "00000000000000000000000000001110" for x13 since it is never assigned
+WARNING:HDLCompiler:871 - "/home/Alex/Documents/dailyprojects/RV32Icore/registerFile.vhd" Line 30: Using initial value "00000000000000000000000000001111" for x14 since it is never assigned
+WARNING:HDLCompiler:871 - "/home/Alex/Documents/dailyprojects/RV32Icore/registerFile.vhd" Line 31: Using initial value "00000000000000000000000000000000" for x15 since it is never assigned
+WARNING:HDLCompiler:871 - "/home/Alex/Documents/dailyprojects/RV32Icore/registerFile.vhd" Line 32: Using initial value "00000000000000000000000000000000" for x16 since it is never assigned
+WARNING:HDLCompiler:871 - "/home/Alex/Documents/dailyprojects/RV32Icore/registerFile.vhd" Line 33: Using initial value "00000000000000000000000000000000" for x17 since it is never assigned
+WARNING:HDLCompiler:871 - "/home/Alex/Documents/dailyprojects/RV32Icore/registerFile.vhd" Line 34: Using initial value "00000000000000000000000000000000" for x18 since it is never assigned
+WARNING:HDLCompiler:871 - "/home/Alex/Documents/dailyprojects/RV32Icore/registerFile.vhd" Line 35: Using initial value "00000000000000000000000000000000" for x19 since it is never assigned
+WARNING:HDLCompiler:871 - "/home/Alex/Documents/dailyprojects/RV32Icore/registerFile.vhd" Line 36: Using initial value "00000000000000000000000000000000" for x20 since it is never assigned
+WARNING:HDLCompiler:871 - "/home/Alex/Documents/dailyprojects/RV32Icore/registerFile.vhd" Line 37: Using initial value "00000000000000000000000000000000" for x21 since it is never assigned
+WARNING:HDLCompiler:871 - "/home/Alex/Documents/dailyprojects/RV32Icore/registerFile.vhd" Line 38: Using initial value "00000000000000000000000000000000" for x22 since it is never assigned
+WARNING:HDLCompiler:871 - "/home/Alex/Documents/dailyprojects/RV32Icore/registerFile.vhd" Line 39: Using initial value "00000000000000000000000000000000" for x23 since it is never assigned
+WARNING:HDLCompiler:871 - "/home/Alex/Documents/dailyprojects/RV32Icore/registerFile.vhd" Line 40: Using initial value "00000000000000000000000000000000" for x24 since it is never assigned
+WARNING:HDLCompiler:871 - "/home/Alex/Documents/dailyprojects/RV32Icore/registerFile.vhd" Line 41: Using initial value "00000000000000000000000000000000" for x25 since it is never assigned
+WARNING:HDLCompiler:871 - "/home/Alex/Documents/dailyprojects/RV32Icore/registerFile.vhd" Line 42: Using initial value "00000000000000000000000000000000" for x26 since it is never assigned
+WARNING:HDLCompiler:871 - "/home/Alex/Documents/dailyprojects/RV32Icore/registerFile.vhd" Line 43: Using initial value "00000000000000000000000000000000" for x27 since it is never assigned
+WARNING:HDLCompiler:871 - "/home/Alex/Documents/dailyprojects/RV32Icore/registerFile.vhd" Line 44: Using initial value "00000000000000000000000000000000" for x28 since it is never assigned
+WARNING:HDLCompiler:871 - "/home/Alex/Documents/dailyprojects/RV32Icore/registerFile.vhd" Line 45: Using initial value "00000000000000000000000000000000" for x29 since it is never assigned
+WARNING:HDLCompiler:871 - "/home/Alex/Documents/dailyprojects/RV32Icore/registerFile.vhd" Line 46: Using initial value "00000000000000000000000000000000" for x30 since it is never assigned
+WARNING:HDLCompiler:871 - "/home/Alex/Documents/dailyprojects/RV32Icore/registerFile.vhd" Line 47: Using initial value "00000000000000000000000000000000" for x31 since it is never assigned
+WARNING:HDLCompiler:92 - "/home/Alex/Documents/dailyprojects/RV32Icore/registerFile.vhd" Line 55: x0 should be on the sensitivity list of the process
+WARNING:HDLCompiler:92 - "/home/Alex/Documents/dailyprojects/RV32Icore/registerFile.vhd" Line 57: x1 should be on the sensitivity list of the process
+WARNING:HDLCompiler:92 - "/home/Alex/Documents/dailyprojects/RV32Icore/registerFile.vhd" Line 59: x2 should be on the sensitivity list of the process
+WARNING:HDLCompiler:92 - "/home/Alex/Documents/dailyprojects/RV32Icore/registerFile.vhd" Line 61: x3 should be on the sensitivity list of the process
+WARNING:HDLCompiler:92 - "/home/Alex/Documents/dailyprojects/RV32Icore/registerFile.vhd" Line 63: x4 should be on the sensitivity list of the process
+WARNING:HDLCompiler:92 - "/home/Alex/Documents/dailyprojects/RV32Icore/registerFile.vhd" Line 65: x5 should be on the sensitivity list of the process
+WARNING:HDLCompiler:92 - "/home/Alex/Documents/dailyprojects/RV32Icore/registerFile.vhd" Line 67: x6 should be on the sensitivity list of the process
+WARNING:HDLCompiler:92 - "/home/Alex/Documents/dailyprojects/RV32Icore/registerFile.vhd" Line 69: x7 should be on the sensitivity list of the process
+WARNING:HDLCompiler:92 - "/home/Alex/Documents/dailyprojects/RV32Icore/registerFile.vhd" Line 71: x8 should be on the sensitivity list of the process
+WARNING:HDLCompiler:92 - "/home/Alex/Documents/dailyprojects/RV32Icore/registerFile.vhd" Line 73: x9 should be on the sensitivity list of the process
+WARNING:HDLCompiler:92 - "/home/Alex/Documents/dailyprojects/RV32Icore/registerFile.vhd" Line 75: x10 should be on the sensitivity list of the process
+WARNING:HDLCompiler:92 - "/home/Alex/Documents/dailyprojects/RV32Icore/registerFile.vhd" Line 77: x11 should be on the sensitivity list of the process
+WARNING:HDLCompiler:92 - "/home/Alex/Documents/dailyprojects/RV32Icore/registerFile.vhd" Line 79: x12 should be on the sensitivity list of the process
+WARNING:HDLCompiler:92 - "/home/Alex/Documents/dailyprojects/RV32Icore/registerFile.vhd" Line 81: x13 should be on the sensitivity list of the process
+WARNING:HDLCompiler:92 - "/home/Alex/Documents/dailyprojects/RV32Icore/registerFile.vhd" Line 83: x14 should be on the sensitivity list of the process
+WARNING:HDLCompiler:92 - "/home/Alex/Documents/dailyprojects/RV32Icore/registerFile.vhd" Line 85: x15 should be on the sensitivity list of the process
+WARNING:HDLCompiler:92 - "/home/Alex/Documents/dailyprojects/RV32Icore/registerFile.vhd" Line 87: x16 should be on the sensitivity list of the process
+WARNING:HDLCompiler:92 - "/home/Alex/Documents/dailyprojects/RV32Icore/registerFile.vhd" Line 89: x17 should be on the sensitivity list of the process
+WARNING:HDLCompiler:92 - "/home/Alex/Documents/dailyprojects/RV32Icore/registerFile.vhd" Line 91: x18 should be on the sensitivity list of the process
+WARNING:HDLCompiler:92 - "/home/Alex/Documents/dailyprojects/RV32Icore/registerFile.vhd" Line 93: x19 should be on the sensitivity list of the process
+WARNING:HDLCompiler:92 - "/home/Alex/Documents/dailyprojects/RV32Icore/registerFile.vhd" Line 95: x20 should be on the sensitivity list of the process
+WARNING:HDLCompiler:92 - "/home/Alex/Documents/dailyprojects/RV32Icore/registerFile.vhd" Line 97: x21 should be on the sensitivity list of the process
+WARNING:HDLCompiler:92 - "/home/Alex/Documents/dailyprojects/RV32Icore/registerFile.vhd" Line 99: x22 should be on the sensitivity list of the process
+WARNING:HDLCompiler:92 - "/home/Alex/Documents/dailyprojects/RV32Icore/registerFile.vhd" Line 101: x23 should be on the sensitivity list of the process
+WARNING:HDLCompiler:92 - "/home/Alex/Documents/dailyprojects/RV32Icore/registerFile.vhd" Line 103: x24 should be on the sensitivity list of the process
+WARNING:HDLCompiler:92 - "/home/Alex/Documents/dailyprojects/RV32Icore/registerFile.vhd" Line 105: x25 should be on the sensitivity list of the process
+WARNING:HDLCompiler:92 - "/home/Alex/Documents/dailyprojects/RV32Icore/registerFile.vhd" Line 107: x26 should be on the sensitivity list of the process
+WARNING:HDLCompiler:92 - "/home/Alex/Documents/dailyprojects/RV32Icore/registerFile.vhd" Line 109: x27 should be on the sensitivity list of the process
+WARNING:HDLCompiler:92 - "/home/Alex/Documents/dailyprojects/RV32Icore/registerFile.vhd" Line 111: x28 should be on the sensitivity list of the process
+WARNING:HDLCompiler:92 - "/home/Alex/Documents/dailyprojects/RV32Icore/registerFile.vhd" Line 113: x29 should be on the sensitivity list of the process
+WARNING:HDLCompiler:92 - "/home/Alex/Documents/dailyprojects/RV32Icore/registerFile.vhd" Line 115: x30 should be on the sensitivity list of the process
+WARNING:HDLCompiler:92 - "/home/Alex/Documents/dailyprojects/RV32Icore/registerFile.vhd" Line 117: x31 should be on the sensitivity list of the process
+WARNING:HDLCompiler:321 - "/home/Alex/Documents/dailyprojects/RV32Icore/registerFile.vhd" Line 124: Comparison between arrays of unequal length always returns FALSE.
+WARNING:HDLCompiler:92 - "/home/Alex/Documents/dailyprojects/RV32Icore/registerFile.vhd" Line 127: x1 should be on the sensitivity list of the process
+WARNING:HDLCompiler:92 - "/home/Alex/Documents/dailyprojects/RV32Icore/registerFile.vhd" Line 129: x2 should be on the sensitivity list of the process
+WARNING:HDLCompiler:92 - "/home/Alex/Documents/dailyprojects/RV32Icore/registerFile.vhd" Line 131: x3 should be on the sensitivity list of the process
+WARNING:HDLCompiler:92 - "/home/Alex/Documents/dailyprojects/RV32Icore/registerFile.vhd" Line 133: x4 should be on the sensitivity list of the process
+WARNING:HDLCompiler:92 - "/home/Alex/Documents/dailyprojects/RV32Icore/registerFile.vhd" Line 135: x5 should be on the sensitivity list of the process
+WARNING:HDLCompiler:92 - "/home/Alex/Documents/dailyprojects/RV32Icore/registerFile.vhd" Line 137: x6 should be on the sensitivity list of the process
+WARNING:HDLCompiler:92 - "/home/Alex/Documents/dailyprojects/RV32Icore/registerFile.vhd" Line 139: x7 should be on the sensitivity list of the process
+WARNING:HDLCompiler:92 - "/home/Alex/Documents/dailyprojects/RV32Icore/registerFile.vhd" Line 141: x8 should be on the sensitivity list of the process
+WARNING:HDLCompiler:92 - "/home/Alex/Documents/dailyprojects/RV32Icore/registerFile.vhd" Line 143: x9 should be on the sensitivity list of the process
+WARNING:HDLCompiler:92 - "/home/Alex/Documents/dailyprojects/RV32Icore/registerFile.vhd" Line 145: x10 should be on the sensitivity list of the process
+WARNING:HDLCompiler:92 - "/home/Alex/Documents/dailyprojects/RV32Icore/registerFile.vhd" Line 147: x11 should be on the sensitivity list of the process
+WARNING:HDLCompiler:92 - "/home/Alex/Documents/dailyprojects/RV32Icore/registerFile.vhd" Line 149: x12 should be on the sensitivity list of the process
+WARNING:HDLCompiler:92 - "/home/Alex/Documents/dailyprojects/RV32Icore/registerFile.vhd" Line 151: x13 should be on the sensitivity list of the process
+WARNING:HDLCompiler:92 - "/home/Alex/Documents/dailyprojects/RV32Icore/registerFile.vhd" Line 153: x14 should be on the sensitivity list of the process
+WARNING:HDLCompiler:92 - "/home/Alex/Documents/dailyprojects/RV32Icore/registerFile.vhd" Line 155: x15 should be on the sensitivity list of the process
+WARNING:HDLCompiler:92 - "/home/Alex/Documents/dailyprojects/RV32Icore/registerFile.vhd" Line 157: x16 should be on the sensitivity list of the process
+WARNING:HDLCompiler:92 - "/home/Alex/Documents/dailyprojects/RV32Icore/registerFile.vhd" Line 159: x17 should be on the sensitivity list of the process
+WARNING:HDLCompiler:92 - "/home/Alex/Documents/dailyprojects/RV32Icore/registerFile.vhd" Line 161: x18 should be on the sensitivity list of the process
+WARNING:HDLCompiler:92 - "/home/Alex/Documents/dailyprojects/RV32Icore/registerFile.vhd" Line 163: x19 should be on the sensitivity list of the process
+WARNING:HDLCompiler:92 - "/home/Alex/Documents/dailyprojects/RV32Icore/registerFile.vhd" Line 165: x20 should be on the sensitivity list of the process
+WARNING:HDLCompiler:92 - "/home/Alex/Documents/dailyprojects/RV32Icore/registerFile.vhd" Line 167: x21 should be on the sensitivity list of the process
+WARNING:HDLCompiler:92 - "/home/Alex/Documents/dailyprojects/RV32Icore/registerFile.vhd" Line 169: x22 should be on the sensitivity list of the process
+WARNING:HDLCompiler:92 - "/home/Alex/Documents/dailyprojects/RV32Icore/registerFile.vhd" Line 171: x23 should be on the sensitivity list of the process
+WARNING:HDLCompiler:92 - "/home/Alex/Documents/dailyprojects/RV32Icore/registerFile.vhd" Line 173: x24 should be on the sensitivity list of the process
+WARNING:HDLCompiler:92 - "/home/Alex/Documents/dailyprojects/RV32Icore/registerFile.vhd" Line 175: x25 should be on the sensitivity list of the process
+WARNING:HDLCompiler:92 - "/home/Alex/Documents/dailyprojects/RV32Icore/registerFile.vhd" Line 177: x26 should be on the sensitivity list of the process
+WARNING:HDLCompiler:92 - "/home/Alex/Documents/dailyprojects/RV32Icore/registerFile.vhd" Line 179: x27 should be on the sensitivity list of the process
+WARNING:HDLCompiler:92 - "/home/Alex/Documents/dailyprojects/RV32Icore/registerFile.vhd" Line 181: x28 should be on the sensitivity list of the process
+WARNING:HDLCompiler:92 - "/home/Alex/Documents/dailyprojects/RV32Icore/registerFile.vhd" Line 183: x29 should be on the sensitivity list of the process
+WARNING:HDLCompiler:92 - "/home/Alex/Documents/dailyprojects/RV32Icore/registerFile.vhd" Line 185: x30 should be on the sensitivity list of the process
+WARNING:HDLCompiler:92 - "/home/Alex/Documents/dailyprojects/RV32Icore/registerFile.vhd" Line 187: x31 should be on the sensitivity list of the process
+
 =========================================================================
 *                           HDL Synthesis                               *
 =========================================================================
 
 Synthesizing Unit <topLevel>.
     Related source file is "/home/Alex/Documents/dailyprojects/RV32Icore/topLevel.vhd".
+INFO:Xst:3210 - "/home/Alex/Documents/dailyprojects/RV32Icore/topLevel.vhd" line 41: Output port <rd2> of the instance <INSTANCE_REGFILE> is unconnected or connected to loadless signal.
     Summary:
 	no macro.
 Unit <topLevel> synthesized.
@@ -160,6 +262,10 @@ Unit <pcIncrementor> synthesized.
 Synthesizing Unit <programMemory>.
     Related source file is "/home/Alex/Documents/dailyprojects/RV32Icore/programMemory.vhd".
 WARNING:Xst:647 - Input <pc<31:6>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:737 - Found 1-bit latch for signal <instruction<18>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <instruction<17>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <instruction<16>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <instruction<15>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
 WARNING:Xst:737 - Found 1-bit latch for signal <instruction<7>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
 WARNING:Xst:737 - Found 1-bit latch for signal <instruction<6>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
 WARNING:Xst:737 - Found 1-bit latch for signal <instruction<5>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
@@ -169,9 +275,24 @@ WARNING:Xst:737 - Found 1-bit latch for signal <instruction<2>>. Latches may be 
 WARNING:Xst:737 - Found 1-bit latch for signal <instruction<1>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
 WARNING:Xst:737 - Found 1-bit latch for signal <instruction<0>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
     Summary:
-	inferred   8 Latch(s).
-	inferred  17 Multiplexer(s).
+	inferred  12 Latch(s).
+	inferred  25 Multiplexer(s).
 Unit <programMemory> synthesized.
+
+Synthesizing Unit <registerFile>.
+    Related source file is "/home/Alex/Documents/dailyprojects/RV32Icore/registerFile.vhd".
+WARNING:Xst:737 - Found 1-bit latch for signal <rd1<3>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <rd1<2>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <rd1<1>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <rd1<0>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <rd2<3>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <rd2<2>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <rd2<1>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <rd2<0>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+    Summary:
+	inferred   8 Latch(s).
+	inferred  30 Multiplexer(s).
+Unit <registerFile> synthesized.
 
 =========================================================================
 HDL Synthesis Report
@@ -181,10 +302,10 @@ Macro Statistics
  32-bit adder                                          : 1
 # Registers                                            : 1
  32-bit register                                       : 1
-# Latches                                              : 8
- 1-bit latch                                           : 8
-# Multiplexers                                         : 17
- 1-bit 2-to-1 multiplexer                              : 17
+# Latches                                              : 20
+ 1-bit latch                                           : 20
+# Multiplexers                                         : 55
+ 1-bit 2-to-1 multiplexer                              : 55
 
 =========================================================================
 
@@ -201,8 +322,8 @@ Macro Statistics
  32-bit adder                                          : 1
 # Registers                                            : 32
  Flip-Flops                                            : 32
-# Multiplexers                                         : 17
- 1-bit 2-to-1 multiplexer                              : 17
+# Multiplexers                                         : 55
+ 1-bit 2-to-1 multiplexer                              : 55
 
 =========================================================================
 
@@ -234,19 +355,33 @@ WARNING:Xst:3002 - This design contains one or more registers/latches that are d
   Please refer to http://www.xilinx.com search string "Spartan6 asynchronous set/reset" for more details.
 
   List of register instances with asynchronous set and reset:
+    rd2_0 in unit <registerFile>
+    rd2_1 in unit <registerFile>
+    rd2_2 in unit <registerFile>
+    rd2_3 in unit <registerFile>
+    rd1_0 in unit <registerFile>
+    rd1_1 in unit <registerFile>
+    rd1_2 in unit <registerFile>
+    rd1_3 in unit <registerFile>
+    instruction_2 in unit <programMemory>
     instruction_3 in unit <programMemory>
     instruction_4 in unit <programMemory>
-    instruction_2 in unit <programMemory>
+    instruction_5 in unit <programMemory>
     instruction_6 in unit <programMemory>
     instruction_7 in unit <programMemory>
-    instruction_5 in unit <programMemory>
-    instruction_1 in unit <programMemory>
+    instruction_16 in unit <programMemory>
+    instruction_17 in unit <programMemory>
+    instruction_15 in unit <programMemory>
     instruction_0 in unit <programMemory>
+    instruction_1 in unit <programMemory>
+    instruction_18 in unit <programMemory>
 
 
 Optimizing unit <topLevel> ...
 
 Optimizing unit <programMemory> ...
+
+Optimizing unit <registerFile> ...
 WARNING:Xst:2677 - Node <INSTANCE_PC/Output_6> of sequential type is unconnected in block <topLevel>.
 WARNING:Xst:2677 - Node <INSTANCE_PC/Output_7> of sequential type is unconnected in block <topLevel>.
 WARNING:Xst:2677 - Node <INSTANCE_PC/Output_8> of sequential type is unconnected in block <topLevel>.
@@ -273,6 +408,18 @@ WARNING:Xst:2677 - Node <INSTANCE_PC/Output_28> of sequential type is unconnecte
 WARNING:Xst:2677 - Node <INSTANCE_PC/Output_29> of sequential type is unconnected in block <topLevel>.
 WARNING:Xst:2677 - Node <INSTANCE_PC/Output_30> of sequential type is unconnected in block <topLevel>.
 WARNING:Xst:2677 - Node <INSTANCE_PC/Output_31> of sequential type is unconnected in block <topLevel>.
+WARNING:Xst:2677 - Node <INSTANCE_PROGMEM/instruction_2> of sequential type is unconnected in block <topLevel>.
+WARNING:Xst:2677 - Node <INSTANCE_PROGMEM/instruction_3> of sequential type is unconnected in block <topLevel>.
+WARNING:Xst:2677 - Node <INSTANCE_PROGMEM/instruction_4> of sequential type is unconnected in block <topLevel>.
+WARNING:Xst:2677 - Node <INSTANCE_PROGMEM/instruction_5> of sequential type is unconnected in block <topLevel>.
+WARNING:Xst:2677 - Node <INSTANCE_PROGMEM/instruction_6> of sequential type is unconnected in block <topLevel>.
+WARNING:Xst:2677 - Node <INSTANCE_PROGMEM/instruction_7> of sequential type is unconnected in block <topLevel>.
+WARNING:Xst:2677 - Node <INSTANCE_PROGMEM/instruction_0> of sequential type is unconnected in block <topLevel>.
+WARNING:Xst:2677 - Node <INSTANCE_PROGMEM/instruction_1> of sequential type is unconnected in block <topLevel>.
+WARNING:Xst:2677 - Node <INSTANCE_REGFILE/rd2_0> of sequential type is unconnected in block <topLevel>.
+WARNING:Xst:2677 - Node <INSTANCE_REGFILE/rd2_1> of sequential type is unconnected in block <topLevel>.
+WARNING:Xst:2677 - Node <INSTANCE_REGFILE/rd2_2> of sequential type is unconnected in block <topLevel>.
+WARNING:Xst:2677 - Node <INSTANCE_REGFILE/rd2_3> of sequential type is unconnected in block <topLevel>.
 
 Mapping all equations...
 Building and optimizing final netlist ...
@@ -308,13 +455,13 @@ Top Level Output File Name         : topLevel.ngc
 
 Primitive and Black Box Usage:
 ------------------------------
-# BELS                             : 21
+# BELS                             : 17
 #      GND                         : 1
 #      INV                         : 2
 #      LUT1                        : 3
 #      LUT2                        : 1
-#      LUT3                        : 2
-#      LUT4                        : 4
+#      LUT3                        : 1
+#      LUT4                        : 1
 #      MUXCY                       : 3
 #      VCC                         : 1
 #      XORCY                       : 4
@@ -334,21 +481,21 @@ Selected Device : 6slx9csg324-2
 
 
 Slice Logic Utilization: 
- Number of Slice Registers:               4  out of  11440     0%  
- Number of Slice LUTs:                   12  out of   5720     0%  
-    Number used as Logic:                12  out of   5720     0%  
+ Number of Slice Registers:               8  out of  11440     0%  
+ Number of Slice LUTs:                    8  out of   5720     0%  
+    Number used as Logic:                 8  out of   5720     0%  
 
 Slice Logic Distribution: 
- Number of LUT Flip Flop pairs used:     12
-   Number with an unused Flip Flop:       8  out of     12    66%  
-   Number with an unused LUT:             0  out of     12     0%  
-   Number of fully used LUT-FF pairs:     4  out of     12    33%  
+ Number of LUT Flip Flop pairs used:     16
+   Number with an unused Flip Flop:       8  out of     16    50%  
+   Number with an unused LUT:             8  out of     16    50%  
+   Number of fully used LUT-FF pairs:     0  out of     16     0%  
    Number of unique control sets:         2
 
 IO Utilization: 
  Number of IOs:                          34
  Number of bonded IOBs:                  34  out of    200    17%  
-    IOB Flip Flops/Latches:               8
+    IOB Flip Flops/Latches:               4
 
 Specific Feature Utilization:
  Number of BUFG/BUFGCTRLs:                1  out of     16     6%  
@@ -371,12 +518,12 @@ NOTE: THESE TIMING NUMBERS ARE ONLY A SYNTHESIS ESTIMATE.
 
 Clock Information:
 ------------------
------------------------------------+------------------------------------+-------+
-Clock Signal                       | Clock buffer(FF name)              | Load  |
------------------------------------+------------------------------------+-------+
-clk                                | BUFGP                              | 4     |
-N1                                 | NONE(INSTANCE_PROMEM/instruction_3)| 8     |
------------------------------------+------------------------------------+-------+
+-----------------------------------+--------------------------------------+-------+
+Clock Signal                       | Clock buffer(FF name)                | Load  |
+-----------------------------------+--------------------------------------+-------+
+clk                                | BUFGP                                | 4     |
+N1                                 | NONE(INSTANCE_PROGMEM/instruction_16)| 8     |
+-----------------------------------+--------------------------------------+-------+
 INFO:Xst:2169 - HDL ADVISOR - Some clock signals were not automatically buffered by XST with BUFG/BUFR resources. Please use the buffer_type constraint in order to insert these buffers to the clock signals to help prevent skew problems.
 
 Asynchronous Control Signals Information:
@@ -387,7 +534,7 @@ Timing Summary:
 ---------------
 Speed Grade: -2
 
-   Minimum period: 2.218ns (Maximum Frequency: 450.857MHz)
+   Minimum period: 2.046ns (Maximum Frequency: 488.639MHz)
    Minimum input arrival time before clock: 2.433ns
    Maximum output required time after clock: No path found
    Maximum combinational path delay: No path found
@@ -398,27 +545,29 @@ All values displayed in nanoseconds (ns)
 
 =========================================================================
 Timing constraint: Default period analysis for Clock 'clk'
-  Clock period: 2.218ns (frequency: 450.857MHz)
+  Clock period: 2.046ns (frequency: 488.639MHz)
   Total number of paths / destination ports: 10 / 4
 -------------------------------------------------------------------------
-Delay:               2.218ns (Levels of Logic = 3)
-  Source:            INSTANCE_PC/Output_4 (FF)
+Delay:               2.046ns (Levels of Logic = 5)
+  Source:            INSTANCE_PC/Output_2 (FF)
   Destination:       INSTANCE_PC/Output_5 (FF)
   Source Clock:      clk rising
   Destination Clock: clk rising
 
-  Data Path: INSTANCE_PC/Output_4 to INSTANCE_PC/Output_5
+  Data Path: INSTANCE_PC/Output_2 to INSTANCE_PC/Output_5
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     FDE:C->Q              8   0.525   0.944  INSTANCE_PC/Output_4 (INSTANCE_PC/Output_4)
-     LUT1:I0->O            1   0.254   0.000  INSTANCE_PCINC/Madd_Output_cy<4>_rt (INSTANCE_PCINC/Madd_Output_cy<4>_rt)
-     MUXCY:S->O            0   0.215   0.000  INSTANCE_PCINC/Madd_Output_cy<4> (INSTANCE_PCINC/Madd_Output_cy<4>)
+     FDE:C->Q              2   0.525   0.725  INSTANCE_PC/Output_2 (INSTANCE_PC/Output_2)
+     INV:I->O              1   0.255   0.000  INSTANCE_PCINC/Madd_Output_lut<2>1_INV_0 (INSTANCE_PCINC/Madd_Output_lut<2>1)
+     MUXCY:S->O            1   0.215   0.000  INSTANCE_PCINC/Madd_Output_cy<2> (INSTANCE_PCINC/Madd_Output_cy<2>)
+     MUXCY:CI->O           1   0.023   0.000  INSTANCE_PCINC/Madd_Output_cy<3> (INSTANCE_PCINC/Madd_Output_cy<3>)
+     MUXCY:CI->O           0   0.023   0.000  INSTANCE_PCINC/Madd_Output_cy<4> (INSTANCE_PCINC/Madd_Output_cy<4>)
      XORCY:CI->O           1   0.206   0.000  INSTANCE_PCINC/Madd_Output_xor<5> (pcNext<5>)
      FDE:D                     0.074          INSTANCE_PC/Output_5
     ----------------------------------------
-    Total                      2.218ns (1.274ns logic, 0.944ns route)
-                                       (57.4% logic, 42.6% route)
+    Total                      2.046ns (1.321ns logic, 0.725ns route)
+                                       (64.6% logic, 35.4% route)
 
 =========================================================================
 Timing constraint: Default OFFSET IN BEFORE for Clock 'clk'
@@ -449,21 +598,21 @@ Clock to Setup on destination clock clk
                | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
 Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
 ---------------+---------+---------+---------+---------+
-clk            |    2.218|         |         |         |
+clk            |    2.046|         |         |         |
 ---------------+---------+---------+---------+---------+
 
 =========================================================================
 
 
 Total REAL time to Xst completion: 4.00 secs
-Total CPU time to Xst completion: 3.98 secs
+Total CPU time to Xst completion: 4.11 secs
  
 --> 
 
 
-Total memory usage is 371972 kilobytes
+Total memory usage is 375536 kilobytes
 
 Number of errors   :    0 (   0 filtered)
-Number of warnings :   38 (   0 filtered)
-Number of infos    :    1 (   0 filtered)
+Number of warnings :  158 (   0 filtered)
+Number of infos    :    2 (   0 filtered)
 

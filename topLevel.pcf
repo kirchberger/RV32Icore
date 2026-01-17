@@ -1,5 +1,5 @@
 //! **************************************************************************
-// Written by: Map P.20131013 on Sat Jan 17 14:01:38 2026
+// Written by: Map P.20131013 on Sat Jan 17 15:43:16 2026
 //! **************************************************************************
 
 SCHEMATIC START;
@@ -7,13 +7,13 @@ COMP "clk" LOCATE = SITE "M18" LEVEL 1;
 PIN clk_pin<0> = BEL "clk" PINNAME PAD;
 PIN "clk_pin<0>" CLOCK_DEDICATED_ROUTE = FALSE;
 COMP "enable" LOCATE = SITE "F17" LEVEL 1;
-COMP "instruction<0>" LOCATE = SITE "P15" LEVEL 1;
-COMP "instruction<1>" LOCATE = SITE "P16" LEVEL 1;
-COMP "instruction<2>" LOCATE = SITE "N15" LEVEL 1;
-COMP "instruction<3>" LOCATE = SITE "N16" LEVEL 1;
-COMP "instruction<4>" LOCATE = SITE "U17" LEVEL 1;
-COMP "instruction<5>" LOCATE = SITE "U18" LEVEL 1;
-COMP "instruction<6>" LOCATE = SITE "T17" LEVEL 1;
-COMP "instruction<7>" LOCATE = SITE "T18" LEVEL 1;
+COMP "rd1<0>" LOCATE = SITE "P15" LEVEL 1;
+COMP "rd1<1>" LOCATE = SITE "P16" LEVEL 1;
+COMP "rd1<2>" LOCATE = SITE "N15" LEVEL 1;
+COMP "rd1<3>" LOCATE = SITE "N16" LEVEL 1;
+COMP "rd1<4>" LOCATE = SITE "U17" LEVEL 1;
+COMP "rd1<5>" LOCATE = SITE "U18" LEVEL 1;
+COMP "rd1<6>" LOCATE = SITE "T17" LEVEL 1;
+COMP "rd1<7>" LOCATE = SITE "T18" LEVEL 1;
 SCHEMATIC END;
 

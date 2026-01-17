@@ -22,30 +22,30 @@
 
 <msg type="warning" file="Place" num="837" delta="old" >Partially locked IO Bus is found. 
 <arg fmt="%s" index="1"> Following components of the bus are not locked: 
-	 Comp: instruction&lt;31&gt;
-	 Comp: instruction&lt;30&gt;
-	 Comp: instruction&lt;29&gt;
-	 Comp: instruction&lt;28&gt;
-	 Comp: instruction&lt;27&gt;
-	 Comp: instruction&lt;26&gt;
-	 Comp: instruction&lt;25&gt;
-	 Comp: instruction&lt;24&gt;
-	 Comp: instruction&lt;23&gt;
-	 Comp: instruction&lt;22&gt;
-	 Comp: instruction&lt;21&gt;
-	 Comp: instruction&lt;20&gt;
-	 Comp: instruction&lt;19&gt;
-	 Comp: instruction&lt;18&gt;
-	 Comp: instruction&lt;17&gt;
-	 Comp: instruction&lt;16&gt;
-	 Comp: instruction&lt;15&gt;
-	 Comp: instruction&lt;14&gt;
-	 Comp: instruction&lt;13&gt;
-	 Comp: instruction&lt;12&gt;
-	 Comp: instruction&lt;11&gt;
-	 Comp: instruction&lt;10&gt;
-	 Comp: instruction&lt;9&gt;
-	 Comp: instruction&lt;8&gt;
+	 Comp: rd1&lt;31&gt;
+	 Comp: rd1&lt;30&gt;
+	 Comp: rd1&lt;29&gt;
+	 Comp: rd1&lt;28&gt;
+	 Comp: rd1&lt;27&gt;
+	 Comp: rd1&lt;26&gt;
+	 Comp: rd1&lt;25&gt;
+	 Comp: rd1&lt;24&gt;
+	 Comp: rd1&lt;23&gt;
+	 Comp: rd1&lt;22&gt;
+	 Comp: rd1&lt;21&gt;
+	 Comp: rd1&lt;20&gt;
+	 Comp: rd1&lt;19&gt;
+	 Comp: rd1&lt;18&gt;
+	 Comp: rd1&lt;17&gt;
+	 Comp: rd1&lt;16&gt;
+	 Comp: rd1&lt;15&gt;
+	 Comp: rd1&lt;14&gt;
+	 Comp: rd1&lt;13&gt;
+	 Comp: rd1&lt;12&gt;
+	 Comp: rd1&lt;11&gt;
+	 Comp: rd1&lt;10&gt;
+	 Comp: rd1&lt;9&gt;
+	 Comp: rd1&lt;8&gt;
 </arg>
 </msg>
 

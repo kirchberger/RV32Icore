@@ -1,3 +1,4 @@
+vhdl work "registerFile.vhd"
 vhdl work "programMemory.vhd"
 vhdl work "programCounter.vhd"
 vhdl work "pcIncrementor.vhd"
