@@ -5,13 +5,15 @@ use IEEE.numeric_std.All;
 
 
 entity topLevel is
-    Port ( pcNext : inout  STD_LOGIC_VECTOR (31 downto 0);
-           pc : inout  STD_LOGIC_VECTOR (31 downto 0);
+    Port ( instruction : inout  STD_LOGIC_VECTOR (31 downto 0);
            clk : in  STD_LOGIC;
            enable : in  STD_LOGIC);
 end topLevel;
 
 architecture Behavioral of topLevel is
+signal pc : STD_LOGIC_VECTOR (31 downto 0);
+signal pcNext : STD_LOGIC_VECTOR (31 downto 0);
+
 
 begin
 
@@ -28,6 +30,9 @@ begin
 		port map (
 			pc,
 			pcNext);
-  
+	INSTANCE_PROMEM : entity work.programMemory
+		port map (
+			pc,
+			instruction);
 end Behavioral;
 
