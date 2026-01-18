@@ -18,7 +18,8 @@ signal instruction : STD_LOGIC_VECTOR (31 downto 0);
 --signal dataOut : STD_LOGIC_VECTOR (31 downto 0);
 signal pc : STD_LOGIC_VECTOR (31 downto 0);
 signal pcNext : STD_LOGIC_VECTOR (31 downto 0);
-
+signal immExtend : STD_LOGIC_VECTOR (31 downto 0);
+signal aluResult : STD_LOGIC_VECTOR (31 downto 0);
 
 begin
 
@@ -53,9 +54,22 @@ begin
 		port map (
 			rd2,
          dataOut,
-         rd1,
+         aluResult,
          wr,
          clk);
+	
+	INSTANCE_IMMEXT : entity work.immExtender
+		port map (
+			instruction (31 downto 25) & instruction (11 downto 7),
+			immExtend);
+	
+	INSTANCE_ALU : entity work.ALU
+		port map (
+			rd1,
+			immExtend,
+			aluResult);
+			
+			
 	
 	wr <= instruction(0) and instruction(1) and (not instruction(2)) and (not instruction(3)) and (not instruction(4)) and instruction(5) and (not instruction(6));
 	
