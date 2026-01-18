@@ -1,7 +1,7 @@
 Release 14.7 par P.20131013 (lin64)
 Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
 
-Zen::  Sun Jan 18 13:00:20 2026
+Zen::  Sun Jan 18 13:14:15 2026
 
 par -w -intstyle ise -ol high -mt off topLevel_map.ncd topLevel.ncd
 topLevel.pcf 
@@ -108,7 +108,7 @@ Phase  2  : 200 unrouted;      REAL time: 2 secs
 
 Phase  3  : 59 unrouted;      REAL time: 2 secs 
 
-Phase  4  : 59 unrouted; (Par is working to improve performance)     REAL time: 2 secs 
+Phase  4  : 59 unrouted; (Par is working to improve performance)     REAL time: 3 secs 
 
 Updating file: topLevel.ncd with current fully routed design.
 

@@ -36,20 +36,22 @@ begin
 		port map (
 			pc,
 			pcNext);
-			
+	
+	-- Should be updated to a memory controller
 	INSTANCE_PROGMEM : entity work.programMemory
 		port map (
 			pc,
 			instruction);
-			
+	
+	-- Cannot write to registers yet
 	INSTANCE_REGFILE : entity work.registerFile
 		port map (
 			instruction(19 downto 15),
 			instruction(24 downto 20),
 			rd1,
 			rd2);
-		
-	-- stores rd2 value, rd1 will need the immediate added
+	
+	-- Should be updated to some sort of memory controller
 	INSTANCE_DATAMEM : entity work.dataMemory
 		port map (
 			rd2,
@@ -58,11 +60,13 @@ begin
          wr,
          clk);
 	
+	-- Dumb extender that just extends for the store instruction
 	INSTANCE_IMMEXT : entity work.immExtender
 		port map (
 			instruction (31 downto 25) & instruction (11 downto 7),
 			immExtend);
-	
+			
+	-- Dumb ALU right now that just adds
 	INSTANCE_ALU : entity work.ALU
 		port map (
 			rd1,
@@ -70,7 +74,7 @@ begin
 			aluResult);
 			
 			
-	
+	-- Signal to write to the data memory, signals like such will be added to a seperate file later
 	wr <= instruction(0) and instruction(1) and (not instruction(2)) and (not instruction(3)) and (not instruction(4)) and instruction(5) and (not instruction(6));
 	
 end Behavioral;
