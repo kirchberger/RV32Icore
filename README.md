@@ -9,23 +9,23 @@ Making a RISC-V core for the base instruction set in VHDL
 
 Types of instructions:
 
-Integer computation instructions (20)
+Integer computation instructions
 
-  Integer register immediate instructions (10)
+  Integer register immediate instructions
 
-  Integer register register instructions (9)
+  Integer register register instructions
 
-  NOP instruction (1)
+  NOP instruction
 
 Control transfer instructions 
   
-  Unconditional jumps (2)
+  Unconditional jumps
 
-  Conditional branches (4)
+  Conditional branches
 
-load and store instructions (2)
+load and store instructions
 
-Memory ordering instructions (1)
+Memory ordering instructions 
 
 Environment call and breakpoints
 
