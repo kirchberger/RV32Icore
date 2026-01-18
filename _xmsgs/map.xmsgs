@@ -22,40 +22,47 @@
 
 <msg type="warning" file="Place" num="837" delta="old" >Partially locked IO Bus is found. 
 <arg fmt="%s" index="1"> Following components of the bus are not locked: 
-	 Comp: rd1&lt;31&gt;
-	 Comp: rd1&lt;30&gt;
-	 Comp: rd1&lt;29&gt;
-	 Comp: rd1&lt;28&gt;
-	 Comp: rd1&lt;27&gt;
-	 Comp: rd1&lt;26&gt;
-	 Comp: rd1&lt;25&gt;
-	 Comp: rd1&lt;24&gt;
-	 Comp: rd1&lt;23&gt;
-	 Comp: rd1&lt;22&gt;
-	 Comp: rd1&lt;21&gt;
-	 Comp: rd1&lt;20&gt;
-	 Comp: rd1&lt;19&gt;
-	 Comp: rd1&lt;18&gt;
-	 Comp: rd1&lt;17&gt;
-	 Comp: rd1&lt;16&gt;
-	 Comp: rd1&lt;15&gt;
-	 Comp: rd1&lt;14&gt;
-	 Comp: rd1&lt;13&gt;
-	 Comp: rd1&lt;12&gt;
-	 Comp: rd1&lt;11&gt;
-	 Comp: rd1&lt;10&gt;
-	 Comp: rd1&lt;9&gt;
-	 Comp: rd1&lt;8&gt;
+	 Comp: dataOut&lt;31&gt;
+	 Comp: dataOut&lt;30&gt;
+	 Comp: dataOut&lt;29&gt;
+	 Comp: dataOut&lt;28&gt;
+	 Comp: dataOut&lt;27&gt;
+	 Comp: dataOut&lt;26&gt;
+	 Comp: dataOut&lt;25&gt;
+	 Comp: dataOut&lt;24&gt;
+	 Comp: dataOut&lt;23&gt;
+	 Comp: dataOut&lt;22&gt;
+	 Comp: dataOut&lt;21&gt;
+	 Comp: dataOut&lt;20&gt;
+	 Comp: dataOut&lt;19&gt;
+	 Comp: dataOut&lt;18&gt;
+	 Comp: dataOut&lt;17&gt;
+	 Comp: dataOut&lt;16&gt;
+	 Comp: dataOut&lt;15&gt;
+	 Comp: dataOut&lt;14&gt;
+	 Comp: dataOut&lt;13&gt;
+	 Comp: dataOut&lt;12&gt;
+	 Comp: dataOut&lt;11&gt;
+	 Comp: dataOut&lt;10&gt;
+	 Comp: dataOut&lt;9&gt;
+	 Comp: dataOut&lt;8&gt;
+	 Comp: dataOut&lt;7&gt;
 </arg>
 </msg>
 
-<msg type="info" file="Place" num="834" delta="old" >Only a subset of IOs are locked. Out of <arg fmt="%d" index="1">34</arg> IOs, <arg fmt="%d" index="2">10</arg> are locked and <arg fmt="%d" index="3">24</arg> are not locked. <arg fmt="%s" index="4">If you would like to print the names of these IOs, please set the environment variable XIL_PAR_DESIGN_CHECK_VERBOSE to 1.</arg> 
+<msg type="info" file="Place" num="834" delta="old" >Only a subset of IOs are locked. Out of <arg fmt="%d" index="1">35</arg> IOs, <arg fmt="%d" index="2">10</arg> are locked and <arg fmt="%d" index="3">25</arg> are not locked. <arg fmt="%s" index="4">If you would like to print the names of these IOs, please set the environment variable XIL_PAR_DESIGN_CHECK_VERBOSE to 1.</arg> 
 </msg>
 
 <msg type="warning" file="Place" num="1109" delta="old" >A clock IOB / BUFGMUX clock component pair have been found that are not placed at an optimal clock IOB / BUFGMUX site pair. The clock IOB component &lt;<arg fmt="%s" index="1">clk</arg>&gt; is placed at site &lt;<arg fmt="%s" index="2">M18</arg>&gt;. The corresponding BUFG component &lt;<arg fmt="%s" index="3">clk_BUFGP/BUFG</arg>&gt; is placed at site &lt;<arg fmt="%s" index="4">BUFGMUX_X2Y3</arg>&gt;. There is only a select set of IOBs that can use the fast path to the Clocker buffer, and they are not being used. You may want to analyze why this problem exists and correct it. This is normally an ERROR but the CLOCK_DEDICATED_ROUTE constraint was applied on COMP.PIN &lt;<arg fmt="%s" index="5">clk.PAD</arg>&gt; allowing your design to continue. This constraint disables all clock placer rules related to the specified COMP.PIN. The use of this override is highly discouraged as it may lead to very poor timing results. It is recommended that this error condition be corrected in the design.
 </msg>
 
 <msg type="info" file="Pack" num="1650" delta="old" >Map created a placed design.
+</msg>
+
+<msg type="warning" file="PhysDesignRules" num="372" delta="new" >Gated clock. Clock net <arg fmt="%s" index="1">INSTANCE_DATAMEM/GND_105_o_GND_105_o_OR_2456_o</arg> is sourced by a combinatorial pin. This is not good design practice. Use the CE pin to control the loading of data into the flip-flop.
+</msg>
+
+<msg type="warning" file="PhysDesignRules" num="372" delta="new" >Gated clock. Clock net <arg fmt="%s" index="1">INSTANCE_REGFILE/rd2_0_G</arg> is sourced by a combinatorial pin. This is not good design practice. Use the CE pin to control the loading of data into the flip-flop.
 </msg>
 
 </messages>

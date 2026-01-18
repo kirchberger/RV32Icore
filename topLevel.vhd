@@ -5,14 +5,17 @@ use IEEE.numeric_std.All;
 
 
 entity topLevel is
-    Port ( rd1 : inout  STD_LOGIC_VECTOR (31 downto 0);
+    Port ( dataOut : inout STD_LOGIC_VECTOR (31 downto 0);
+				wr : inout STD_LOGIC;
            clk : in  STD_LOGIC;
            enable : in  STD_LOGIC);
 end topLevel;
 
 architecture Behavioral of topLevel is
-signal instruction : STD_LOGIC_VECTOR (31 downto 0);
+signal rd1 : STD_LOGIC_VECTOR (31 downto 0);
 signal rd2 : STD_LOGIC_VECTOR (31 downto 0);
+signal instruction : STD_LOGIC_VECTOR (31 downto 0);
+--signal dataOut : STD_LOGIC_VECTOR (31 downto 0);
 signal pc : STD_LOGIC_VECTOR (31 downto 0);
 signal pcNext : STD_LOGIC_VECTOR (31 downto 0);
 
@@ -44,5 +47,17 @@ begin
 			instruction(24 downto 20),
 			rd1,
 			rd2);
+		
+	-- stores rd2 value, rd1 will need the immediate added
+	INSTANCE_DATAMEM : entity work.dataMemory
+		port map (
+			rd2,
+         dataOut,
+         rd1,
+         wr,
+         clk);
+	
+	wr <= instruction(0) and instruction(1) and (not instruction(2)) and (not instruction(3)) and (not instruction(4)) and instruction(5) and (not instruction(6));
+	
 end Behavioral;
 

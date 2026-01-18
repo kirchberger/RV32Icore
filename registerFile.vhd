@@ -13,7 +13,7 @@ end registerFile;
 
 architecture Behavioral of registerFile is
 
-signal x0 : std_logic_vector (31 downto 0) := "00000000000000000000000000000001";
+signal x0 : std_logic_vector (31 downto 0) := "00000000000000000000000000000000";
 signal x1 : std_logic_vector (31 downto 0) := "00000000000000000000000000000010";
 signal x2 : std_logic_vector (31 downto 0) := "00000000000000000000000000000011";
 signal x3 : std_logic_vector (31 downto 0) := "00000000000000000000000000000100";

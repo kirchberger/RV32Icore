@@ -5,7 +5,7 @@ use IEEE.numeric_std.All;
 
 entity dataMemory is
     Port ( dataIn : in  STD_LOGIC_VECTOR (31 downto 0);
-           dataOut : out  STD_LOGIC_VECTOR (31 downto 0);
+           dataOut : out  STD_LOGIC_VECTOR (31 downto 0) := "00000000000000000000000000000000";
            addr : in  STD_LOGIC_VECTOR (31 downto 0);
            wr : in  STD_LOGIC;
            clk : in  STD_LOGIC);
@@ -13,7 +13,7 @@ end dataMemory;
 
 architecture Behavioral of dataMemory is
 
-signal mem0 : std_logic_vector (31 downto 0) := "00000000000000000000000000001001";
+signal mem0 : std_logic_vector (31 downto 0) := "00000000000000000000000000000000";
 signal mem1 : std_logic_vector (31 downto 0) := "00000000000000001000000000001011";
 signal mem2 : std_logic_vector (31 downto 0) := "00000000000000010000000000001111";
 signal mem3 : std_logic_vector (31 downto 0) := "00000000000000011000000000001101";
@@ -34,80 +34,80 @@ begin
 
   dataMemoryLoad : process (addr) is
 	begin
-		if addr (3 downto 0) = "000000" then
+		if addr (5 downto 0) = "000000" then
 			dataOut <= mem0;
-		elsif addr (3 downto 0) = "000100" then
+		elsif addr (5 downto 0) = "000100" then
 			dataOut <= mem1;
-		elsif addr (3 downto 0) = "001000" then
+		elsif addr (5 downto 0) = "001000" then
 			dataOut <= mem2;
-		elsif addr (3 downto 0) = "001100" then
+		elsif addr (5 downto 0) = "001100" then
 			dataOut <= mem3;
-		elsif addr (3 downto 0) = "010000" then
+		elsif addr (5 downto 0) = "010000" then
 			dataOut <= mem4;
-		elsif addr (3 downto 0) = "010100" then
+		elsif addr (5 downto 0) = "010100" then
 			dataOut <= mem5;
-		elsif pc (3 downto 0) = "011000" then
+		elsif addr (5 downto 0) = "011000" then
 			dataOut <= mem6;
-		elsif pc (3 downto 0) = "011100" then
+		elsif addr (5 downto 0) = "011100" then
 			dataOut <= mem7;
-		elsif pc (3 downto 0) = "100000" then
+		elsif addr (5 downto 0) = "100000" then
 			dataOut <= mem8;
-		elsif pc (3 downto 0) = "100100" then
+		elsif addr (5 downto 0) = "100100" then
 			dataOut <= mem9;
-		elsif pc (3 downto 0) = "101000" then
+		elsif addr (5 downto 0) = "101000" then
 			dataOut <= mem10;
-		elsif pc (3 downto 0) = "101100" then
+		elsif addr (5 downto 0) = "101100" then
 			dataOut <= mem11;
-		elsif pc (3 downto 0) = "110000" then
+		elsif addr (5 downto 0) = "110000" then
 			dataOut <= mem12;
-		elsif pc (3 downto 0) = "110100" then
+		elsif addr (5 downto 0) = "110100" then
 			dataOut <= mem13;
-		elsif pc (3 downto 0) = "111000" then
+		elsif addr (5 downto 0) = "111000" then
 			dataOut <= mem14;
-		elsif pc (3 downto 0) = "111100" then
+		elsif addr (5 downto 0) = "111100" then
 			dataOut <= mem15;
 		end if;
+	
+	
 	end process dataMemoryLoad;
 
 	dataMemoryStore : process (addr, wr, clk, dataIn) is
 	begin
-	if wr = '1' then
-      if rising_edge(clk) then
-			if addr (3 downto 0) = "000000" then
+      if (rising_edge(clk) and wr = '1') then
+			if addr (5 downto 0) = "000000" then
 				 mem0 <= dataIn;
-			elsif addr (3 downto 0) = "000100" then
+			elsif addr (5 downto 0) = "000100" then
 				mem1 <= dataIn;
-			elsif addr (3 downto 0) = "001000" then
+			elsif addr (5 downto 0) = "001000" then
 				mem2 <= dataIn;
-			elsif addr (3 downto 0) = "001100" then
+			elsif addr (5 downto 0) = "001100" then
 				mem3 <= dataIn;
-			elsif addr (3 downto 0) = "010000" then
+			elsif addr (5 downto 0) = "010000" then
 				mem4 <= dataIn;
-			elsif addr (3 downto 0) = "010100" then
+			elsif addr (5 downto 0) = "010100" then
 				mem5 <= dataIn;
-			elsif pc (3 downto 0) = "011000" then
+			elsif addr (5 downto 0) = "011000" then
 				mem6 <= dataIn;
-			elsif pc (3 downto 0) = "011100" then
+			elsif addr (5 downto 0) = "011100" then
 				mem7 <= dataIn;
-			elsif pc (3 downto 0) = "100000" then
+			elsif addr (5 downto 0) = "100000" then
 				mem8 <= dataIn;
-			elsif pc (3 downto 0) = "100100" then
+			elsif addr (5 downto 0) = "100100" then
 				mem9 <= dataIn;
-			elsif pc (3 downto 0) = "101000" then
+			elsif addr (5 downto 0) = "101000" then
 				mem10 <= dataIn;
-			elsif pc (3 downto 0) = "101100" then
+			elsif addr (5 downto 0) = "101100" then
 				mem11 <= dataIn;
-			elsif pc (3 downto 0) = "110000" then
+			elsif addr (5 downto 0) = "110000" then
 				mem12 <= dataIn;
-			elsif pc (3 downto 0) = "110100" then
+			elsif addr (5 downto 0) = "110100" then
 				mem13 <= dataIn;
-			elsif pc (3 downto 0) = "111000" then
+			elsif addr (5 downto 0) = "111000" then
 				mem14 <= dataIn;
-			elsif pc (3 downto 0) = "111100" then
+			elsif addr (5 downto 0) = "111100" then
 				mem15 <= dataIn;
 			end if;
 		end if;
-	end if;	
 	end process dataMemoryStore;
 
 end Behavioral;
