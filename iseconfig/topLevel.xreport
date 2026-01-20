@@ -1,11 +1,11 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <report-views version="2.0" >
  <header>
-  <DateModified>2026-01-18T10:14:47</DateModified>
+  <DateModified>2026-01-19T19:01:16</DateModified>
   <ModuleName>topLevel</ModuleName>
   <SummaryTimeStamp>2026-01-18T10:13:31</SummaryTimeStamp>
   <SavedFilePath>/home/Alex/Documents/dailyprojects/RV32Icore/iseconfig/topLevel.xreport</SavedFilePath>
-  <ImplementationReportsDirectory>/home/Alex/Documents/dailyprojects/RV32Icore</ImplementationReportsDirectory>
+  <ImplementationReportsDirectory>/home/Alex/Documents/dailyprojects/RV32Icore/</ImplementationReportsDirectory>
   <DateInitialized>2026-01-17T09:57:06</DateInitialized>
   <EnableMessageFiltering>false</EnableMessageFiltering>
  </header>

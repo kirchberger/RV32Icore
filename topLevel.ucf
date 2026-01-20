@@ -5,7 +5,7 @@ net "dataOut(3)" LOC = N16;
 net "dataOut(4)" LOC = U17;
 net "dataOut(5)" LOC = U18;
 net "dataOut(6)" LOC = T17;
-net "wr" LOC = T18;
+net "dataOut(7)" LOC = T18;
 net "clk" LOC = M18;
 net "clk" PULLUP;
 net "enable" LOC = F17;
