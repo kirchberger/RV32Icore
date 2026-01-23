@@ -1,0 +1,30 @@
+Running: /opt/Xilinx/14.7/ISE_DS/ISE/bin/lin64/unwrapped/fuse -intstyle ise -incremental -lib secureip -o /home/Alex/Documents/dailyprojects/RV32Icore/topLevel_isim_beh.exe -prj /home/Alex/Documents/dailyprojects/RV32Icore/topLevel_beh.prj work.topLevel 
+ISim P.20131013 (signature 0xfbc00daa)
+Number of CPUs detected in this system: 20
+Turning on mult-threading, number of parallel sub-compilation jobs: 40 
+Determining compilation order of HDL files
+Parsing VHDL file "/home/Alex/Documents/dailyprojects/RV32Icore/registerFile.vhd" into library work
+Parsing VHDL file "/home/Alex/Documents/dailyprojects/RV32Icore/programMemory.vhd" into library work
+Parsing VHDL file "/home/Alex/Documents/dailyprojects/RV32Icore/programCounter.vhd" into library work
+Parsing VHDL file "/home/Alex/Documents/dailyprojects/RV32Icore/pcIncrementor.vhd" into library work
+Parsing VHDL file "/home/Alex/Documents/dailyprojects/RV32Icore/immExtender.vhd" into library work
+Parsing VHDL file "/home/Alex/Documents/dailyprojects/RV32Icore/dataMemory.vhd" into library work
+Parsing VHDL file "/home/Alex/Documents/dailyprojects/RV32Icore/ALU.vhd" into library work
+Parsing VHDL file "/home/Alex/Documents/dailyprojects/RV32Icore/topLevel.vhd" into library work
+Starting static elaboration
+Completed static elaboration
+Fuse Memory Usage: 85088 KB
+Fuse CPU Usage: 1520 ms
+Compiling package standard
+Compiling package std_logic_1164
+Compiling package numeric_std
+Compiling architecture behavioral of entity programCounter [programcounter_default]
+Compiling architecture behavioral of entity pcIncrementor [pcincrementor_default]
+Compiling architecture behavioral of entity programMemory [programmemory_default]
+Compiling architecture behavioral of entity registerFile [registerfile_default]
+Compiling architecture behavioral of entity dataMemory [datamemory_default]
+Compiling architecture behavioral of entity immExtender [immextender_default]
+Compiling architecture behavioral of entity ALU [alu_default]
+Compiling architecture behavioral of entity toplevel
+Time Resolution for simulation is 1ps.
+FATAL_ERROR:Simulator:Fuse.cpp:209:1.133 - Failed to compile one of the generated C files. Please recompile with -mt off -v 1 switch to identify which design unit failed.  For technical support on this issue, please visit http://www.xilinx.com/support.

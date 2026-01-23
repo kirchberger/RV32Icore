@@ -1,0 +1,8 @@
+vhdl isim_temp "registerFile.vhd"
+vhdl isim_temp "programMemory.vhd"
+vhdl isim_temp "programCounter.vhd"
+vhdl isim_temp "pcIncrementor.vhd"
+vhdl isim_temp "immExtender.vhd"
+vhdl isim_temp "dataMemory.vhd"
+vhdl isim_temp "ALU.vhd"
+vhdl isim_temp "topLevel.vhd"

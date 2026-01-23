@@ -1,19 +1,22 @@
 //! **************************************************************************
-// Written by: Map P.20131013 on Fri Jan 23 13:06:05 2026
+// Written by: Map P.20131013 on Fri Jan 23 17:37:30 2026
 //! **************************************************************************
 
 SCHEMATIC START;
 COMP "clk" LOCATE = SITE "M18" LEVEL 1;
 PIN clk_pin<0> = BEL "clk" PINNAME PAD;
 PIN "clk_pin<0>" CLOCK_DEDICATED_ROUTE = FALSE;
-COMP "dataOut<0>" LOCATE = SITE "P15" LEVEL 1;
-COMP "dataOut<1>" LOCATE = SITE "P16" LEVEL 1;
-COMP "dataOut<2>" LOCATE = SITE "N15" LEVEL 1;
-COMP "dataOut<3>" LOCATE = SITE "N16" LEVEL 1;
-COMP "dataOut<4>" LOCATE = SITE "U17" LEVEL 1;
-COMP "dataOut<5>" LOCATE = SITE "U18" LEVEL 1;
-COMP "dataOut<6>" LOCATE = SITE "T17" LEVEL 1;
-COMP "dataOut<7>" LOCATE = SITE "T18" LEVEL 1;
+COMP "btn1" LOCATE = SITE "L18" LEVEL 1;
+COMP "btn2" LOCATE = SITE "M16" LEVEL 1;
+COMP "btn3" LOCATE = SITE "L17" LEVEL 1;
+COMP "test<0>" LOCATE = SITE "P15" LEVEL 1;
+COMP "test<1>" LOCATE = SITE "P16" LEVEL 1;
+COMP "test<2>" LOCATE = SITE "N15" LEVEL 1;
+COMP "test<3>" LOCATE = SITE "N16" LEVEL 1;
+COMP "test<4>" LOCATE = SITE "U17" LEVEL 1;
+COMP "test<5>" LOCATE = SITE "U18" LEVEL 1;
+COMP "test<6>" LOCATE = SITE "T17" LEVEL 1;
+COMP "test<7>" LOCATE = SITE "T18" LEVEL 1;
 COMP "enable" LOCATE = SITE "F17" LEVEL 1;
 SCHEMATIC END;
 

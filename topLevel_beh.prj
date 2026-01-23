@@ -1,0 +1,8 @@
+vhdl work "registerFile.vhd"
+vhdl work "programMemory.vhd"
+vhdl work "programCounter.vhd"
+vhdl work "pcIncrementor.vhd"
+vhdl work "immExtender.vhd"
+vhdl work "dataMemory.vhd"
+vhdl work "ALU.vhd"
+vhdl work "topLevel.vhd"

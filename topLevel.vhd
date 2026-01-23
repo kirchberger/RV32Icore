@@ -5,22 +5,34 @@ use IEEE.numeric_std.All;
 
 
 entity topLevel is
-    Port ( dataOut : inout STD_LOGIC_VECTOR (31 downto 0);
+    Port ( test : inout STD_LOGIC_VECTOR (7 downto 0);
            clk : in  STD_LOGIC;
+			  btn1 : in STD_LOGIC;
+			  btn2 : in STD_LOGIC;
+			  btn3 : in STD_LOGIC;
            enable : in  STD_LOGIC);
 end topLevel;
 
 architecture Behavioral of topLevel is
-signal rd1 : STD_LOGIC_VECTOR (31 downto 0);
-signal rd2 : STD_LOGIC_VECTOR (31 downto 0);
-signal instruction : STD_LOGIC_VECTOR (31 downto 0);
---signal dataOut : STD_LOGIC_VECTOR (31 downto 0);
+-- Program Counter Signals
 signal pc : STD_LOGIC_VECTOR (31 downto 0);
 signal pcNext : STD_LOGIC_VECTOR (31 downto 0);
-signal immExtend : STD_LOGIC_VECTOR (31 downto 0);
+signal instr : STD_LOGIC_VECTOR (31 downto 0);
+
+-- Register Signals
+signal rd1 : STD_LOGIC_VECTOR (31 downto 0);
+signal rd2 : STD_LOGIC_VECTOR (31 downto 0);
+signal wr : STD_LOGIC;
+
+-- Data Memory Signals
+signal dataOut : STD_LOGIC_VECTOR (31 downto 0);
+signal wd : STD_LOGIC;
+
+-- ALU Signals
 signal aluResult : STD_LOGIC_VECTOR (31 downto 0);
-signal wr1 : STD_LOGIC;
-signal wr2 : STD_LOGIC;
+
+-- Imm Signals
+signal immExtend : STD_LOGIC_VECTOR (31 downto 0);
 
 begin
 
@@ -43,18 +55,17 @@ begin
 	INSTANCE_PROGMEM : entity work.programMemory
 		port map (
 			pc,
-			instruction);
+			instr);
 	
-	-- Cannot write to registers yet
 	INSTANCE_REGFILE : entity work.registerFile
 		port map (
-			instruction(19 downto 15),
-			instruction(24 downto 20),
+			instr(19 downto 15),
+			instr(24 downto 20),
 			rd1,
 			rd2,
 			dataOut,
-			instruction (11 downto 7),
-			wr2,
+			instr (11 downto 7),
+			wr,
 			clk);
 	
 	-- Should be updated to some sort of memory controller
@@ -63,15 +74,15 @@ begin
 			rd2,
          dataOut,
          aluResult,
-         wr1,
+         wd,
          clk);
 	
 	-- Extender now extends all instruction types
 	-- Should cleanup
 	INSTANCE_IMMEXT : entity work.immExtender
 		port map (
-			instruction (31 downto 7),
-			instruction (6 downto 0),
+			instr (31 downto 7),
+			instr (6 downto 0),
 			immExtend);
 			
 	-- Dumb ALU right now that just adds
@@ -82,11 +93,26 @@ begin
 			immExtend,
 			aluResult);
 			
+	INSTANCE_DECODE : entity work. opcodeDecode
+		port map (
+			instr (6 downto 0),
+			wr,
+			wd);
 			
-	-- Signal to write to the data memory, signals like such will be added to a seperate file later
-	wr1 <= instruction(0) and instruction(1) and (not instruction(2)) and (not instruction(3)) and (not instruction(4)) and instruction(5) and (not instruction(6));
+			
 	
-	-- Signal to write to the registers, signals like such will be added to a seperate file later
-	wr2 <= instruction(0) and instruction(1) and (not instruction(2)) and (not instruction(3)) and (not instruction(4)) and (not instruction(5)) and (not instruction(6));
+	testSwitch : process (rd1,btn1,btn2,btn3) is
+	begin
+		if (btn1 = '0' and btn2 = '1' and btn3 = '1') then
+			test <= rd1 (15 downto 8);
+		elsif (btn1 = '1' and btn2 = '0' and btn3 = '1') then
+			test <= rd1 (23 downto 16);
+		elsif (btn1 = '1' and btn2 = '1' and btn3 = '0') then
+			test <= rd1 (31 downto 24);
+		else
+			test <= rd1 (7 downto 0);
+		end if;
+	end process testSwitch;
+	
 end Behavioral;
 

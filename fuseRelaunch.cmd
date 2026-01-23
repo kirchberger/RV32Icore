@@ -1,0 +1,1 @@
+-intstyle "ise" -incremental -lib "secureip" -o "/home/Alex/Documents/dailyprojects/RV32Icore/topLevel_isim_beh.exe" -prj "/home/Alex/Documents/dailyprojects/RV32Icore/topLevel_beh.prj" "work.topLevel" 

@@ -10,7 +10,7 @@ Target Device  : xc6slx9
 Target Package : csg324
 Target Speed   : -2
 Mapper Version : spartan6 -- $Revision: 1.55 $
-Mapped Date    : Fri Jan 23 13:05:50 2026
+Mapped Date    : Fri Jan 23 17:37:17 2026
 
 Mapping design into LUTs...
 Running directed packing...
@@ -23,46 +23,16 @@ Total REAL time at the beginning of Placer: 3 secs
 Total CPU  time at the beginning of Placer: 3 secs 
 
 Phase 1.1  Initial Placement Analysis
-Phase 1.1  Initial Placement Analysis (Checksum:92244618) REAL time: 4 secs 
+Phase 1.1  Initial Placement Analysis (Checksum:54bef43) REAL time: 4 secs 
 
 Phase 2.7  Design Feasibility Check
-WARNING:Place:837 - Partially locked IO Bus is found. 
-    Following components of the bus are not locked: 
-   	 Comp: dataOut<31>
-   	 Comp: dataOut<30>
-   	 Comp: dataOut<29>
-   	 Comp: dataOut<28>
-   	 Comp: dataOut<27>
-   	 Comp: dataOut<26>
-   	 Comp: dataOut<25>
-   	 Comp: dataOut<24>
-   	 Comp: dataOut<23>
-   	 Comp: dataOut<22>
-   	 Comp: dataOut<21>
-   	 Comp: dataOut<20>
-   	 Comp: dataOut<19>
-   	 Comp: dataOut<18>
-   	 Comp: dataOut<17>
-   	 Comp: dataOut<16>
-   	 Comp: dataOut<15>
-   	 Comp: dataOut<14>
-   	 Comp: dataOut<13>
-   	 Comp: dataOut<12>
-   	 Comp: dataOut<11>
-   	 Comp: dataOut<10>
-   	 Comp: dataOut<9>
-   	 Comp: dataOut<8>
-
-INFO:Place:834 - Only a subset of IOs are locked. Out of 34 IOs, 10 are locked
-   and 24 are not locked. If you would like to print the names of these IOs,
-   please set the environment variable XIL_PAR_DESIGN_CHECK_VERBOSE to 1. 
-Phase 2.7  Design Feasibility Check (Checksum:92244618) REAL time: 4 secs 
+Phase 2.7  Design Feasibility Check (Checksum:54bef43) REAL time: 4 secs 
 
 Phase 3.31  Local Placement Optimization
-Phase 3.31  Local Placement Optimization (Checksum:92244618) REAL time: 4 secs 
+Phase 3.31  Local Placement Optimization (Checksum:54bef43) REAL time: 4 secs 
 
 Phase 4.2  Initial Placement for Architecture Specific Features
-....
+
 .
 WARNING:Place:1109 - A clock IOB / BUFGMUX clock component pair have been found
    that are not placed at an optimal clock IOB / BUFGMUX site pair. The clock
@@ -77,80 +47,87 @@ WARNING:Place:1109 - A clock IOB / BUFGMUX clock component pair have been found
    timing results. It is recommended that this error condition be corrected in
    the design.
 Phase 4.2  Initial Placement for Architecture Specific Features
-(Checksum:71c7d3db) REAL time: 5 secs 
+(Checksum:317e20f1) REAL time: 5 secs 
 
 Phase 5.36  Local Placement Optimization
-Phase 5.36  Local Placement Optimization (Checksum:71c7d3db) REAL time: 5 secs 
+Phase 5.36  Local Placement Optimization (Checksum:317e20f1) REAL time: 5 secs 
 
 Phase 6.30  Global Clock Region Assignment
-Phase 6.30  Global Clock Region Assignment (Checksum:71c7d3db) REAL time: 5 secs 
+Phase 6.30  Global Clock Region Assignment (Checksum:317e20f1) REAL time: 5 secs 
 
 Phase 7.3  Local Placement Optimization
-...
-Phase 7.3  Local Placement Optimization (Checksum:c647e5c3) REAL time: 6 secs 
+Phase 7.3  Local Placement Optimization (Checksum:317e20f1) REAL time: 5 secs 
 
 Phase 8.5  Local Placement Optimization
-Phase 8.5  Local Placement Optimization (Checksum:c647e5c3) REAL time: 6 secs 
+Phase 8.5  Local Placement Optimization (Checksum:317e20f1) REAL time: 5 secs 
 
 Phase 9.8  Global Placement
-......................
-.................................................................................................................
-..............................................................
-...............................
-Phase 9.8  Global Placement (Checksum:664b01f2) REAL time: 8 secs 
+.........................................................
+..................................................................
+................................................................
+...................................
+Phase 9.8  Global Placement (Checksum:cd95cc34) REAL time: 8 secs 
 
 Phase 10.5  Local Placement Optimization
-Phase 10.5  Local Placement Optimization (Checksum:664b01f2) REAL time: 8 secs 
+Phase 10.5  Local Placement Optimization (Checksum:cd95cc34) REAL time: 8 secs 
 
 Phase 11.18  Placement Optimization
-Phase 11.18  Placement Optimization (Checksum:66c39eea) REAL time: 14 secs 
+Phase 11.18  Placement Optimization (Checksum:65e518ec) REAL time: 12 secs 
 
 Phase 12.5  Local Placement Optimization
-Phase 12.5  Local Placement Optimization (Checksum:66c39eea) REAL time: 14 secs 
+Phase 12.5  Local Placement Optimization (Checksum:65e518ec) REAL time: 12 secs 
 
 Phase 13.34  Placement Validation
-Phase 13.34  Placement Validation (Checksum:66c39eea) REAL time: 14 secs 
+Phase 13.34  Placement Validation (Checksum:65e518ec) REAL time: 12 secs 
 
-Total REAL time to Placer completion: 14 secs 
-Total CPU  time to Placer completion: 14 secs 
+Total REAL time to Placer completion: 12 secs 
+Total CPU  time to Placer completion: 12 secs 
 Running post-placement packing...
 Writing output files...
+WARNING:PhysDesignRules:367 - The signal <INSTANCE_REGFILE/Mram_x2_RAMD_D1_O> is
+   incomplete. The signal does not drive any load pins in the design.
+WARNING:PhysDesignRules:367 - The signal <INSTANCE_REGFILE/Mram_x12_RAMD_D1_O>
+   is incomplete. The signal does not drive any load pins in the design.
 WARNING:PhysDesignRules:367 - The signal <INSTANCE_REGFILE/Mram_x15_RAMD_D1_O>
+   is incomplete. The signal does not drive any load pins in the design.
+WARNING:PhysDesignRules:367 - The signal <INSTANCE_REGFILE/Mram_x13_RAMD_D1_O>
+   is incomplete. The signal does not drive any load pins in the design.
+WARNING:PhysDesignRules:367 - The signal <INSTANCE_REGFILE/Mram_x5_RAMD_D1_O> is
+   incomplete. The signal does not drive any load pins in the design.
+WARNING:PhysDesignRules:367 - The signal <INSTANCE_REGFILE/Mram_x3_RAMD_D1_O> is
+   incomplete. The signal does not drive any load pins in the design.
+WARNING:PhysDesignRules:367 - The signal <INSTANCE_REGFILE/Mram_x1_RAMD_D1_O> is
+   incomplete. The signal does not drive any load pins in the design.
+WARNING:PhysDesignRules:367 - The signal <INSTANCE_REGFILE/Mram_x11_RAMD_D1_O>
    is incomplete. The signal does not drive any load pins in the design.
 WARNING:PhysDesignRules:367 - The signal <INSTANCE_REGFILE/Mram_x14_RAMD_D1_O>
    is incomplete. The signal does not drive any load pins in the design.
-WARNING:PhysDesignRules:367 - The signal <INSTANCE_REGFILE/Mram_x11_RAMD_D1_O>
-   is incomplete. The signal does not drive any load pins in the design.
-WARNING:PhysDesignRules:367 - The signal <INSTANCE_REGFILE/Mram_x1_RAMD_D1_O> is
+WARNING:PhysDesignRules:367 - The signal <INSTANCE_REGFILE/Mram_x4_RAMD_D1_O> is
    incomplete. The signal does not drive any load pins in the design.
-WARNING:PhysDesignRules:367 - The signal <INSTANCE_REGFILE/Mram_x13_RAMD_D1_O>
-   is incomplete. The signal does not drive any load pins in the design.
-WARNING:PhysDesignRules:367 - The signal <INSTANCE_REGFILE/Mram_x12_RAMD_D1_O>
-   is incomplete. The signal does not drive any load pins in the design.
 
 Design Summary
 --------------
 
 Design Summary:
 Number of errors:      0
-Number of warnings:    8
+Number of warnings:   11
 Slice Logic Utilization:
   Number of Slice Registers:                   548 out of  11,440    4%
     Number used as Flip Flops:                 516
     Number used as Latches:                     32
     Number used as Latch-thrus:                  0
     Number used as AND/OR logics:                0
-  Number of Slice LUTs:                        793 out of   5,720   13%
-    Number used as logic:                      760 out of   5,720   13%
-      Number using O6 output only:             749
+  Number of Slice LUTs:                        832 out of   5,720   14%
+    Number used as logic:                      779 out of   5,720   13%
+      Number using O6 output only:             769
       Number using O5 output only:               2
-      Number using O5 and O6:                    9
+      Number using O5 and O6:                    8
       Number used as ROM:                        0
-    Number used as Memory:                      28 out of   1,440    1%
-      Number used as Dual Port RAM:             28
-        Number using O6 output only:             4
+    Number used as Memory:                      48 out of   1,440    3%
+      Number used as Dual Port RAM:             48
+        Number using O6 output only:             8
         Number using O5 output only:             0
-        Number using O5 and O6:                 24
+        Number using O5 and O6:                 40
       Number used as Single Port RAM:            0
       Number used as Shift Register:             0
     Number used exclusively as route-thrus:      5
@@ -159,15 +136,15 @@ Slice Logic Utilization:
       Number with other load:                    0
 
 Slice Logic Distribution:
-  Number of occupied Slices:                   290 out of   1,430   20%
+  Number of occupied Slices:                   269 out of   1,430   18%
   Number of MUXCYs used:                        12 out of   2,860    1%
-  Number of LUT Flip Flop pairs used:          818
-    Number with an unused Flip Flop:           270 out of     818   33%
-    Number with an unused LUT:                  25 out of     818    3%
-    Number of fully used LUT-FF pairs:         523 out of     818   63%
+  Number of LUT Flip Flop pairs used:          832
+    Number with an unused Flip Flop:           284 out of     832   34%
+    Number with an unused LUT:                   0 out of     832    0%
+    Number of fully used LUT-FF pairs:         548 out of     832   65%
     Number of unique control sets:              12
     Number of slice register sites lost
-      to control set restrictions:               8 out of  11,440    1%
+      to control set restrictions:               4 out of  11,440    1%
 
   A LUT Flip Flop pair for this architecture represents one LUT paired with
   one Flip Flop within a slice.  A control set is a unique combination of
@@ -176,9 +153,8 @@ Slice Logic Distribution:
   over-mapped for a non-slice resource or if Placement fails.
 
 IO Utilization:
-  Number of bonded IOBs:                        34 out of     200   17%
-    Number of LOCed IOBs:                       10 out of      34   29%
-    IOB Latches:                                32
+  Number of bonded IOBs:                        13 out of     200    6%
+    Number of LOCed IOBs:                       13 out of      13  100%
 
 Specific Feature Utilization:
   Number of RAMB16BWERs:                         0 out of      32    0%
@@ -191,9 +167,7 @@ Specific Feature Utilization:
   Number of DCM/DCM_CLKGENs:                     0 out of       4    0%
   Number of ILOGIC2/ISERDES2s:                   0 out of     200    0%
   Number of IODELAY2/IODRP2/IODRP2_MCBs:         0 out of     200    0%
-  Number of OLOGIC2/OSERDES2s:                  32 out of     200   16%
-    Number used as OLOGIC2s:                    32
-    Number used as OSERDES2s:                    0
+  Number of OLOGIC2/OSERDES2s:                   0 out of     200    0%
   Number of BSCANs:                              0 out of       4    0%
   Number of BUFHs:                               0 out of     128    0%
   Number of BUFPLLs:                             0 out of       8    0%
@@ -207,11 +181,11 @@ Specific Feature Utilization:
   Number of STARTUPs:                            0 out of       1    0%
   Number of SUSPEND_SYNCs:                       0 out of       1    0%
 
-Average Fanout of Non-Clock Nets:                4.27
+Average Fanout of Non-Clock Nets:                4.47
 
 Peak Memory Usage:  640 MB
-Total REAL time to MAP completion:  15 secs 
-Total CPU time to MAP completion:   14 secs 
+Total REAL time to MAP completion:  13 secs 
+Total CPU time to MAP completion:   13 secs 
 
 Mapping completed.
 See MAP report file "topLevel_map.mrp" for details.

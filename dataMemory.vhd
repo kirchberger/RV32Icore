@@ -13,7 +13,7 @@ end dataMemory;
 
 architecture Behavioral of dataMemory is
 
-signal mem0 : std_logic_vector (31 downto 0) := "00000000000000000000000000000000";
+signal mem0 : std_logic_vector (31 downto 0) := "00000000000000000000000000001100";
 signal mem1 : std_logic_vector (31 downto 0) := "00000000000000001000000000001011";
 signal mem2 : std_logic_vector (31 downto 0) := "00000000000000010000000000001111";
 signal mem3 : std_logic_vector (31 downto 0) := "00000000000000011000000000001101";
