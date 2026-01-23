@@ -21,6 +21,7 @@ signal immExtend : STD_LOGIC_VECTOR (31 downto 0);
 signal aluResult : STD_LOGIC_VECTOR (31 downto 0);
 signal wr1 : STD_LOGIC;
 signal wr2 : STD_LOGIC;
+
 begin
 
 
@@ -65,10 +66,12 @@ begin
          wr1,
          clk);
 	
-	-- Dumb extender that just extends for the store instruction
+	-- Extender now extends all instruction types
+	-- Should cleanup
 	INSTANCE_IMMEXT : entity work.immExtender
 		port map (
-			instruction (31 downto 25) & instruction (11 downto 7),
+			instruction (31 downto 7),
+			instruction (6 downto 0),
 			immExtend);
 			
 	-- Dumb ALU right now that just adds

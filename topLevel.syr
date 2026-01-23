@@ -132,7 +132,6 @@ Parsing architecture <Behavioral> of entity <alu>.
 Parsing VHDL file "/home/Alex/Documents/dailyprojects/RV32Icore/topLevel.vhd" into library work
 Parsing entity <topLevel>.
 Parsing architecture <Behavioral> of entity <toplevel>.
-WARNING:HDLCompiler:946 - "/home/Alex/Documents/dailyprojects/RV32Icore/topLevel.vhd" Line 71: Actual for formal port imm is neither a static name nor a globally static expression
 
 =========================================================================
 *                            HDL Elaboration                            *
@@ -286,7 +285,7 @@ Unit <dataMemory> synthesized.
 Synthesizing Unit <immExtender>.
     Related source file is "/home/Alex/Documents/dailyprojects/RV32Icore/immExtender.vhd".
     Summary:
-	no macro.
+	inferred   5 Multiplexer(s).
 Unit <immExtender> synthesized.
 
 Synthesizing Unit <ALU>.
@@ -308,8 +307,9 @@ Macro Statistics
  32-bit register                                       : 17
 # Latches                                              : 47
  1-bit latch                                           : 47
-# Multiplexers                                         : 511
+# Multiplexers                                         : 516
  1-bit 2-to-1 multiplexer                              : 511
+ 32-bit 2-to-1 multiplexer                             : 5
 
 =========================================================================
 
@@ -363,8 +363,9 @@ Macro Statistics
  32-bit adder                                          : 2
 # Registers                                            : 544
  Flip-Flops                                            : 544
-# Multiplexers                                         : 511
+# Multiplexers                                         : 516
  1-bit 2-to-1 multiplexer                              : 511
+ 32-bit 2-to-1 multiplexer                             : 5
 
 =========================================================================
 
@@ -518,15 +519,15 @@ Top Level Output File Name         : topLevel.ngc
 
 Primitive and Black Box Usage:
 ------------------------------
-# BELS                             : 790
+# BELS                             : 793
 #      GND                         : 1
 #      INV                         : 10
-#      LUT1                        : 7
-#      LUT2                        : 4
-#      LUT3                        : 420
-#      LUT4                        : 9
-#      LUT5                        : 165
-#      LUT6                        : 155
+#      LUT1                        : 6
+#      LUT2                        : 2
+#      LUT3                        : 422
+#      LUT4                        : 14
+#      LUT5                        : 163
+#      LUT6                        : 156
 #      MUXCY                       : 8
 #      VCC                         : 1
 #      XORCY                       : 10
@@ -551,16 +552,16 @@ Selected Device : 6slx9csg324-2
 
 Slice Logic Utilization: 
  Number of Slice Registers:             562  out of  11440     4%  
- Number of Slice LUTs:                  798  out of   5720    13%  
-    Number used as Logic:               770  out of   5720    13%  
+ Number of Slice LUTs:                  801  out of   5720    14%  
+    Number used as Logic:               773  out of   5720    13%  
     Number used as Memory:               28  out of   1440     1%  
        Number used as RAM:               28
 
 Slice Logic Distribution: 
- Number of LUT Flip Flop pairs used:    799
-   Number with an unused Flip Flop:     237  out of    799    29%  
-   Number with an unused LUT:             1  out of    799     0%  
-   Number of fully used LUT-FF pairs:   561  out of    799    70%  
+ Number of LUT Flip Flop pairs used:    802
+   Number with an unused Flip Flop:     240  out of    802    29%  
+   Number with an unused LUT:             1  out of    802     0%  
+   Number of fully used LUT-FF pairs:   561  out of    802    69%  
    Number of unique control sets:        12
 
 IO Utilization: 
@@ -709,14 +710,14 @@ clk                                        |    7.056|         |         |      
 
 
 Total REAL time to Xst completion: 6.00 secs
-Total CPU time to Xst completion: 6.46 secs
+Total CPU time to Xst completion: 6.43 secs
  
 --> 
 
 
-Total memory usage is 377004 kilobytes
+Total memory usage is 377116 kilobytes
 
 Number of errors   :    0 (   0 filtered)
-Number of warnings :  104 (   0 filtered)
+Number of warnings :  103 (   0 filtered)
 Number of infos    :    3 (   0 filtered)
 

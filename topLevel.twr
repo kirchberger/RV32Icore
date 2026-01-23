@@ -37,7 +37,7 @@ Setup/Hold to clock clk
             |Max Setup to|  Process   |Max Hold to |  Process   |                  | Clock  |
 Source      | clk (edge) |   Corner   | clk (edge) |   Corner   |Internal Clock(s) | Phase  |
 ------------+------------+------------+------------+------------+------------------+--------+
-enable      |   -0.191(R)|      FAST  |    2.197(R)|      SLOW  |clk_BUFGP         |   0.000|
+enable      |    0.083(R)|      SLOW  |    1.926(R)|      SLOW  |clk_BUFGP         |   0.000|
 ------------+------------+------------+------------+------------+------------------+--------+
 
 Clock to Setup on destination clock clk
@@ -45,18 +45,18 @@ Clock to Setup on destination clock clk
                | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
 Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
 ---------------+---------+---------+---------+---------+
-clk            |    8.352|         |         |         |
+clk            |    9.750|         |         |         |
 ---------------+---------+---------+---------+---------+
 
 
-Analysis completed Mon Jan 19 23:03:36 2026 
+Analysis completed Fri Jan 23 13:06:18 2026 
 --------------------------------------------------------------------------------
 
 Trace Settings:
 -------------------------
 Trace Settings 
 
-Peak Memory Usage: 381 MB
+Peak Memory Usage: 382 MB
 
 
 

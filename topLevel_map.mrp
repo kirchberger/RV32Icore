@@ -10,7 +10,7 @@ Target Device  : xc6slx9
 Target Package : csg324
 Target Speed   : -2
 Mapper Version : spartan6 -- $Revision: 1.55 $
-Mapped Date    : Mon Jan 19 23:03:11 2026
+Mapped Date    : Fri Jan 23 13:05:50 2026
 
 Design Summary
 --------------
@@ -22,11 +22,11 @@ Slice Logic Utilization:
     Number used as Latches:                     32
     Number used as Latch-thrus:                  0
     Number used as AND/OR logics:                0
-  Number of Slice LUTs:                        790 out of   5,720   13%
-    Number used as logic:                      756 out of   5,720   13%
-      Number using O6 output only:             750
+  Number of Slice LUTs:                        793 out of   5,720   13%
+    Number used as logic:                      760 out of   5,720   13%
+      Number using O6 output only:             749
       Number using O5 output only:               2
-      Number using O5 and O6:                    4
+      Number using O5 and O6:                    9
       Number used as ROM:                        0
     Number used as Memory:                      28 out of   1,440    1%
       Number used as Dual Port RAM:             28
@@ -35,18 +35,18 @@ Slice Logic Utilization:
         Number using O5 and O6:                 24
       Number used as Single Port RAM:            0
       Number used as Shift Register:             0
-    Number used exclusively as route-thrus:      6
+    Number used exclusively as route-thrus:      5
       Number with same-slice register load:      0
-      Number with same-slice carry load:         6
+      Number with same-slice carry load:         5
       Number with other load:                    0
 
 Slice Logic Distribution:
-  Number of occupied Slices:                   253 out of   1,430   17%
+  Number of occupied Slices:                   290 out of   1,430   20%
   Number of MUXCYs used:                        12 out of   2,860    1%
-  Number of LUT Flip Flop pairs used:          802
-    Number with an unused Flip Flop:           254 out of     802   31%
-    Number with an unused LUT:                  12 out of     802    1%
-    Number of fully used LUT-FF pairs:         536 out of     802   66%
+  Number of LUT Flip Flop pairs used:          818
+    Number with an unused Flip Flop:           270 out of     818   33%
+    Number with an unused LUT:                  25 out of     818    3%
+    Number of fully used LUT-FF pairs:         523 out of     818   63%
     Number of unique control sets:              12
     Number of slice register sites lost
       to control set restrictions:               8 out of  11,440    1%
@@ -89,11 +89,11 @@ Specific Feature Utilization:
   Number of STARTUPs:                            0 out of       1    0%
   Number of SUSPEND_SYNCs:                       0 out of       1    0%
 
-Average Fanout of Non-Clock Nets:                4.29
+Average Fanout of Non-Clock Nets:                4.27
 
 Peak Memory Usage:  640 MB
-Total REAL time to MAP completion:  13 secs 
-Total CPU time to MAP completion:   13 secs 
+Total REAL time to MAP completion:  15 secs 
+Total CPU time to MAP completion:   14 secs 
 
 Table of Contents
 -----------------
@@ -155,17 +155,17 @@ WARNING:Place:1109 - A clock IOB / BUFGMUX clock component pair have been found
    The use of this override is highly discouraged as it may lead to very poor
    timing results. It is recommended that this error condition be corrected in
    the design.
+WARNING:PhysDesignRules:367 - The signal <INSTANCE_REGFILE/Mram_x15_RAMD_D1_O>
+   is incomplete. The signal does not drive any load pins in the design.
+WARNING:PhysDesignRules:367 - The signal <INSTANCE_REGFILE/Mram_x14_RAMD_D1_O>
+   is incomplete. The signal does not drive any load pins in the design.
 WARNING:PhysDesignRules:367 - The signal <INSTANCE_REGFILE/Mram_x11_RAMD_D1_O>
    is incomplete. The signal does not drive any load pins in the design.
 WARNING:PhysDesignRules:367 - The signal <INSTANCE_REGFILE/Mram_x1_RAMD_D1_O> is
    incomplete. The signal does not drive any load pins in the design.
-WARNING:PhysDesignRules:367 - The signal <INSTANCE_REGFILE/Mram_x14_RAMD_D1_O>
-   is incomplete. The signal does not drive any load pins in the design.
-WARNING:PhysDesignRules:367 - The signal <INSTANCE_REGFILE/Mram_x15_RAMD_D1_O>
+WARNING:PhysDesignRules:367 - The signal <INSTANCE_REGFILE/Mram_x13_RAMD_D1_O>
    is incomplete. The signal does not drive any load pins in the design.
 WARNING:PhysDesignRules:367 - The signal <INSTANCE_REGFILE/Mram_x12_RAMD_D1_O>
-   is incomplete. The signal does not drive any load pins in the design.
-WARNING:PhysDesignRules:367 - The signal <INSTANCE_REGFILE/Mram_x13_RAMD_D1_O>
    is incomplete. The signal does not drive any load pins in the design.
 
 Section 3 - Informational

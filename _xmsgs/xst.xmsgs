@@ -5,9 +5,6 @@
      behavior or data corruption.  It is strongly advised that
      users do not edit the contents of this file. -->
 <messages>
-<msg type="warning" file="HDLCompiler" num="946" delta="old" >"/home/Alex/Documents/dailyprojects/RV32Icore/topLevel.vhd" Line 71: Actual for formal port <arg fmt="%s" index="1">imm</arg> is neither a static name nor a globally static expression
-</msg>
-
 <msg type="warning" file="HDLCompiler" num="92" delta="new" >"/home/Alex/Documents/dailyprojects/RV32Icore/registerFile.vhd" Line 27: <arg fmt="%s" index="1">x</arg> should be on the sensitivity list of the process
 </msg>
 
