@@ -13,13 +13,13 @@ end programMemory;
 
 architecture Behavioral of programMemory is
 -- lw x2 x1 
-constant ins0 : std_logic_vector (31 downto 0) := "00000000000000001010000100000011";
+constant ins0 : std_logic_vector (31 downto 0) := "00000000010000001010000100000011";
 -- lw x1 x2
 constant ins1 : std_logic_vector (31 downto 0) := "00000000000000010010000010100011"; 
--- sw x0 x1
-constant ins2 : std_logic_vector (31 downto 0) := "00000000000100000010000000100011"; 
--- sw x0 x2
-constant ins3 : std_logic_vector (31 downto 0) := "00000000001000000010000000100011"; 
+-- addi x3 x2 4
+constant ins2 : std_logic_vector (31 downto 0) := "00000000010000010010000110010011"; 
+-- 
+constant ins3 : std_logic_vector (31 downto 0) := "00000000001000011010000000100011"; 
 constant ins4 : std_logic_vector (31 downto 0) := "00000000000100000010000000100011";
 constant ins5 : std_logic_vector (31 downto 0) := "00000000000000101000000000111111";
 constant ins6 : std_logic_vector (31 downto 0) := "00000000000000110000000001111111";

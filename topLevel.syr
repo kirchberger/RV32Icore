@@ -4,14 +4,14 @@ Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
 Parameter TMPDIR set to xst/projnav.tmp
 
 
-Total REAL time to Xst completion: 1.00 secs
+Total REAL time to Xst completion: 0.00 secs
 Total CPU time to Xst completion: 0.04 secs
  
 --> 
 Parameter xsthdpdir set to xst
 
 
-Total REAL time to Xst completion: 1.00 secs
+Total REAL time to Xst completion: 0.00 secs
 Total CPU time to Xst completion: 0.04 secs
  
 --> 
@@ -183,7 +183,7 @@ Elaborating entity <opcodeDecode> (architecture <Behavioral>) from library <work
 Synthesizing Unit <topLevel>.
     Related source file is "/home/Alex/Documents/dailyprojects/RV32Icore/topLevel.vhd".
     Summary:
-	inferred   3 Multiplexer(s).
+	inferred   4 Multiplexer(s).
 Unit <topLevel> synthesized.
 
 Synthesizing Unit <programCounter>.
@@ -203,6 +203,7 @@ Unit <pcIncrementor> synthesized.
 Synthesizing Unit <programMemory>.
     Related source file is "/home/Alex/Documents/dailyprojects/RV32Icore/programMemory.vhd".
 WARNING:Xst:647 - Input <pc<31:6>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:737 - Found 1-bit latch for signal <instruction<22>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
 WARNING:Xst:737 - Found 1-bit latch for signal <instruction<21>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
 WARNING:Xst:737 - Found 1-bit latch for signal <instruction<20>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
 WARNING:Xst:737 - Found 1-bit latch for signal <instruction<18>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
@@ -210,7 +211,6 @@ WARNING:Xst:737 - Found 1-bit latch for signal <instruction<17>>. Latches may be
 WARNING:Xst:737 - Found 1-bit latch for signal <instruction<16>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
 WARNING:Xst:737 - Found 1-bit latch for signal <instruction<15>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
 WARNING:Xst:737 - Found 1-bit latch for signal <instruction<13>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
-WARNING:Xst:737 - Found 1-bit latch for signal <instruction<8>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
 WARNING:Xst:737 - Found 1-bit latch for signal <instruction<7>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
 WARNING:Xst:737 - Found 1-bit latch for signal <instruction<6>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
 WARNING:Xst:737 - Found 1-bit latch for signal <instruction<5>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
@@ -221,7 +221,7 @@ WARNING:Xst:737 - Found 1-bit latch for signal <instruction<1>>. Latches may be 
 WARNING:Xst:737 - Found 1-bit latch for signal <instruction<0>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
     Summary:
 	inferred  16 Latch(s).
-	inferred  32 Multiplexer(s).
+	inferred  33 Multiplexer(s).
 Unit <programMemory> synthesized.
 
 Synthesizing Unit <registerFile>.
@@ -304,7 +304,7 @@ Unit <ALU> synthesized.
 Synthesizing Unit <opcodeDecode>.
     Related source file is "/home/Alex/Documents/dailyprojects/RV32Icore/opcodeDecode.vhd".
     Summary:
-	no macro.
+	inferred   3 Multiplexer(s).
 Unit <opcodeDecode> synthesized.
 
 =========================================================================
@@ -319,9 +319,9 @@ Macro Statistics
  32-bit register                                       : 17
 # Latches                                              : 48
  1-bit latch                                           : 48
-# Multiplexers                                         : 520
- 1-bit 2-to-1 multiplexer                              : 512
- 32-bit 2-to-1 multiplexer                             : 5
+# Multiplexers                                         : 525
+ 1-bit 2-to-1 multiplexer                              : 516
+ 32-bit 2-to-1 multiplexer                             : 6
  8-bit 2-to-1 multiplexer                              : 3
 
 =========================================================================
@@ -376,9 +376,9 @@ Macro Statistics
  32-bit adder                                          : 2
 # Registers                                            : 544
  Flip-Flops                                            : 544
-# Multiplexers                                         : 520
- 1-bit 2-to-1 multiplexer                              : 512
- 32-bit 2-to-1 multiplexer                             : 5
+# Multiplexers                                         : 525
+ 1-bit 2-to-1 multiplexer                              : 516
+ 32-bit 2-to-1 multiplexer                             : 6
  8-bit 2-to-1 multiplexer                              : 3
 
 =========================================================================
@@ -420,13 +420,13 @@ WARNING:Xst:3002 - This design contains one or more registers/latches that are d
     instruction_16 in unit <programMemory>
     instruction_17 in unit <programMemory>
     instruction_15 in unit <programMemory>
-    instruction_8 in unit <programMemory>
+    instruction_22 in unit <programMemory>
     instruction_13 in unit <programMemory>
     instruction_21 in unit <programMemory>
-    instruction_20 in unit <programMemory>
-    instruction_1 in unit <programMemory>
-    instruction_18 in unit <programMemory>
     instruction_0 in unit <programMemory>
+    instruction_20 in unit <programMemory>
+    instruction_18 in unit <programMemory>
+    instruction_1 in unit <programMemory>
 
 
 Optimizing unit <topLevel> ...
@@ -460,11 +460,10 @@ WARNING:Xst:2677 - Node <INSTANCE_PC/Output_28> of sequential type is unconnecte
 WARNING:Xst:2677 - Node <INSTANCE_PC/Output_29> of sequential type is unconnected in block <topLevel>.
 WARNING:Xst:2677 - Node <INSTANCE_PC/Output_30> of sequential type is unconnected in block <topLevel>.
 WARNING:Xst:2677 - Node <INSTANCE_PC/Output_31> of sequential type is unconnected in block <topLevel>.
-WARNING:Xst:2677 - Node <INSTANCE_PROGMEM/instruction_13> of sequential type is unconnected in block <topLevel>.
 
 Mapping all equations...
 Building and optimizing final netlist ...
-Found area constraint ratio of 100 (+ 5) on block topLevel, actual ratio is 14.
+Found area constraint ratio of 100 (+ 5) on block topLevel, actual ratio is 15.
 
 Final Macro Processing ...
 
@@ -496,21 +495,21 @@ Top Level Output File Name         : topLevel.ngc
 
 Primitive and Black Box Usage:
 ------------------------------
-# BELS                             : 812
+# BELS                             : 929
 #      GND                         : 1
 #      INV                         : 10
-#      LUT1                        : 7
+#      LUT1                        : 23
 #      LUT2                        : 2
-#      LUT3                        : 418
-#      LUT4                        : 26
-#      LUT5                        : 164
-#      LUT6                        : 165
-#      MUXCY                       : 8
+#      LUT3                        : 420
+#      LUT4                        : 35
+#      LUT5                        : 169
+#      LUT6                        : 198
+#      MUXCY                       : 34
 #      VCC                         : 1
-#      XORCY                       : 10
-# FlipFlops/Latches                : 563
+#      XORCY                       : 36
+# FlipFlops/Latches                : 564
 #      FDE                         : 516
-#      LD                          : 47
+#      LD                          : 48
 # RAMS                             : 14
 #      RAM32M                      : 10
 #      RAM32X1D                    : 4
@@ -528,17 +527,17 @@ Selected Device : 6slx9csg324-2
 
 
 Slice Logic Utilization: 
- Number of Slice Registers:             563  out of  11440     4%  
- Number of Slice LUTs:                  840  out of   5720    14%  
-    Number used as Logic:               792  out of   5720    13%  
+ Number of Slice Registers:             564  out of  11440     4%  
+ Number of Slice LUTs:                  905  out of   5720    15%  
+    Number used as Logic:               857  out of   5720    14%  
     Number used as Memory:               48  out of   1440     3%  
        Number used as RAM:               48
 
 Slice Logic Distribution: 
- Number of LUT Flip Flop pairs used:    841
-   Number with an unused Flip Flop:     278  out of    841    33%  
-   Number with an unused LUT:             1  out of    841     0%  
-   Number of fully used LUT-FF pairs:   562  out of    841    66%  
+ Number of LUT Flip Flop pairs used:    906
+   Number with an unused Flip Flop:     342  out of    906    37%  
+   Number with an unused LUT:             1  out of    906     0%  
+   Number of fully used LUT-FF pairs:   563  out of    906    62%  
    Number of unique control sets:        12
 
 IO Utilization: 
@@ -571,7 +570,7 @@ Clock Signal                                                                    
 -------------------------------------------------------------------------------------------+-------------------------------------+-------+
 clk                                                                                        | BUFGP                               | 530   |
 INSTANCE_DATAMEM/GND_41_o_GND_41_o_OR_500_o(INSTANCE_DATAMEM/GND_41_o_GND_41_o_OR_500_o1:O)| BUFG(*)(INSTANCE_DATAMEM/dataOut_0) | 32    |
-N1                                                                                         | NONE(INSTANCE_PROGMEM/instruction_3)| 15    |
+N1                                                                                         | NONE(INSTANCE_PROGMEM/instruction_3)| 16    |
 -------------------------------------------------------------------------------------------+-------------------------------------+-------+
 (*) This 1 clock signal(s) are generated by combinatorial logic,
 and XST is not able to identify which are the primary clock signals.
@@ -586,9 +585,9 @@ Timing Summary:
 ---------------
 Speed Grade: -2
 
-   Minimum period: 7.100ns (Maximum Frequency: 140.848MHz)
+   Minimum period: 7.100ns (Maximum Frequency: 140.846MHz)
    Minimum input arrival time before clock: 2.433ns
-   Maximum output required time after clock: 6.804ns
+   Maximum output required time after clock: 6.848ns
    Maximum combinational path delay: 7.673ns
 
 Timing Details:
@@ -597,25 +596,25 @@ All values displayed in nanoseconds (ns)
 
 =========================================================================
 Timing constraint: Default period analysis for Clock 'clk'
-  Clock period: 7.100ns (frequency: 140.848MHz)
-  Total number of paths / destination ports: 19466 / 1028
+  Clock period: 7.100ns (frequency: 140.846MHz)
+  Total number of paths / destination ports: 21514 / 1092
 -------------------------------------------------------------------------
 Delay:               7.100ns (Levels of Logic = 6)
-  Source:            INSTANCE_REGFILE/Mram_x1 (RAM)
+  Source:            INSTANCE_REGFILE/Mram_x2 (RAM)
   Destination:       INSTANCE_DATAMEM/mem7_31 (FF)
   Source Clock:      clk rising
   Destination Clock: clk rising
 
-  Data Path: INSTANCE_REGFILE/Mram_x1 to INSTANCE_DATAMEM/mem7_31
+  Data Path: INSTANCE_REGFILE/Mram_x2 to INSTANCE_DATAMEM/mem7_31
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     RAM32M:WCLK->DOB0     2   1.131   0.726  INSTANCE_REGFILE/Mram_x1 (INSTANCE_ALU/Madd_Output_lut<2>)
-     LUT1:I0->O            1   0.254   0.000  INSTANCE_ALU/Madd_Output_cy<2>_rt (INSTANCE_ALU/Madd_Output_cy<2>_rt)
+     RAM32M:WCLK->DOB0     2   1.131   0.726  INSTANCE_REGFILE/Mram_x2 (rd1<2>)
+     LUT3:I2->O            1   0.254   0.000  INSTANCE_ALU/Madd_Output_lut<2> (INSTANCE_ALU/Madd_Output_lut<2>)
      MUXCY:S->O            1   0.215   0.000  INSTANCE_ALU/Madd_Output_cy<2> (INSTANCE_ALU/Madd_Output_cy<2>)
      MUXCY:CI->O           1   0.023   0.000  INSTANCE_ALU/Madd_Output_cy<3> (INSTANCE_ALU/Madd_Output_cy<3>)
-     MUXCY:CI->O           0   0.023   0.000  INSTANCE_ALU/Madd_Output_cy<4> (INSTANCE_ALU/Madd_Output_cy<4>)
-     XORCY:CI->O         393   0.206   2.445  INSTANCE_ALU/Madd_Output_xor<5> (aluResult<5>)
+     MUXCY:CI->O           1   0.023   0.000  INSTANCE_ALU/Madd_Output_cy<4> (INSTANCE_ALU/Madd_Output_cy<4>)
+     XORCY:CI->O         394   0.206   2.445  INSTANCE_ALU/Madd_Output_xor<5> (aluResult<5>)
      INV:I->O             32   0.255   1.519  INSTANCE_DATAMEM/_n0974_inv21_cepot_INV_0 (INSTANCE_DATAMEM/_n0974_inv21_cepot)
      FDE:CE                    0.302          INSTANCE_DATAMEM/mem3_0
     ----------------------------------------
@@ -645,22 +644,22 @@ Offset:              2.433ns (Levels of Logic = 1)
 Timing constraint: Default OFFSET OUT AFTER for Clock 'clk'
   Total number of paths / destination ports: 32 / 8
 -------------------------------------------------------------------------
-Offset:              6.804ns (Levels of Logic = 3)
-  Source:            INSTANCE_REGFILE/Mram_x5 (RAM)
+Offset:              6.848ns (Levels of Logic = 3)
+  Source:            INSTANCE_REGFILE/Mram_x6 (RAM)
   Destination:       test<3> (PAD)
   Source Clock:      clk rising
 
-  Data Path: INSTANCE_REGFILE/Mram_x5 to test<3>
+  Data Path: INSTANCE_REGFILE/Mram_x6 to test<3>
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     RAM32M:WCLK->DOB1     1   1.131   0.790  INSTANCE_REGFILE/Mram_x5 (rd1<27>)
+     RAM32M:WCLK->DOB1     2   1.131   0.834  INSTANCE_REGFILE/Mram_x6 (INSTANCE_ALU/Madd_Output_lut<27>)
      LUT4:I2->O            1   0.250   0.790  Mmux_test41 (Mmux_test4)
      LUT6:I4->O            1   0.250   0.681  Mmux_test42 (test_3_OBUF)
      OBUF:I->O                 2.912          test_3_OBUF (test<3>)
     ----------------------------------------
-    Total                      6.804ns (4.543ns logic, 2.261ns route)
-                                       (66.8% logic, 33.2% route)
+    Total                      6.848ns (4.543ns logic, 2.305ns route)
+                                       (66.3% logic, 33.7% route)
 
 =========================================================================
 Timing constraint: Default path analysis
@@ -675,9 +674,9 @@ Delay:               7.673ns (Levels of Logic = 4)
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
      IBUF:I->O            16   1.328   1.458  btn3_IBUF (btn3_IBUF)
-     LUT4:I0->O            1   0.254   0.790  Mmux_test71 (Mmux_test7)
-     LUT6:I4->O            1   0.250   0.681  Mmux_test72 (test_6_OBUF)
-     OBUF:I->O                 2.912          test_6_OBUF (test<6>)
+     LUT4:I0->O            1   0.254   0.790  Mmux_test81 (Mmux_test8)
+     LUT6:I4->O            1   0.250   0.681  Mmux_test82 (test_7_OBUF)
+     OBUF:I->O                 2.912          test_7_OBUF (test<7>)
     ----------------------------------------
     Total                      7.673ns (4.744ns logic, 2.929ns route)
                                        (61.8% logic, 38.2% route)
@@ -692,7 +691,7 @@ Clock to Setup on destination clock INSTANCE_DATAMEM/GND_41_o_GND_41_o_OR_500_o
                | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
 Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
 ---------------+---------+---------+---------+---------+
-clk            |         |         |    8.205|         |
+clk            |         |         |    8.206|         |
 ---------------+---------+---------+---------+---------+
 
 Clock to Setup on destination clock clk
@@ -700,22 +699,22 @@ Clock to Setup on destination clock clk
                                            | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
 Source Clock                               |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
 -------------------------------------------+---------+---------+---------+---------+
-INSTANCE_DATAMEM/GND_41_o_GND_41_o_OR_500_o|         |    1.700|         |         |
+INSTANCE_DATAMEM/GND_41_o_GND_41_o_OR_500_o|         |    3.091|         |         |
 clk                                        |    7.100|         |         |         |
 -------------------------------------------+---------+---------+---------+---------+
 
 =========================================================================
 
 
-Total REAL time to Xst completion: 7.00 secs
-Total CPU time to Xst completion: 6.35 secs
+Total REAL time to Xst completion: 6.00 secs
+Total CPU time to Xst completion: 6.51 secs
  
 --> 
 
 
-Total memory usage is 377296 kilobytes
+Total memory usage is 377308 kilobytes
 
 Number of errors   :    0 (   0 filtered)
-Number of warnings :   98 (   0 filtered)
+Number of warnings :   97 (   0 filtered)
 Number of infos    :    3 (   0 filtered)
 

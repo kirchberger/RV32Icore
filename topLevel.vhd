@@ -22,10 +22,12 @@ signal instr : STD_LOGIC_VECTOR (31 downto 0);
 -- Register Signals
 signal rd1 : STD_LOGIC_VECTOR (31 downto 0);
 signal rd2 : STD_LOGIC_VECTOR (31 downto 0);
+signal rdIn : STD_LOGIC_VECTOR (31 downto 0);
 signal wr : STD_LOGIC;
+signal rdInMult: STD_LOGIC;
 
 -- Data Memory Signals
-signal dataOut : STD_LOGIC_VECTOR (31 downto 0);
+signal dataMemOut : STD_LOGIC_VECTOR (31 downto 0);
 signal wd : STD_LOGIC;
 
 -- ALU Signals
@@ -63,7 +65,7 @@ begin
 			instr(24 downto 20),
 			rd1,
 			rd2,
-			dataOut,
+			rdIn,
 			instr (11 downto 7),
 			wr,
 			clk);
@@ -72,7 +74,7 @@ begin
 	INSTANCE_DATAMEM : entity work.dataMemory
 		port map (
 			rd2,
-         dataOut,
+         dataMemOut,
          aluResult,
          wd,
          clk);
@@ -93,12 +95,21 @@ begin
 			immExtend,
 			aluResult);
 			
-	INSTANCE_DECODE : entity work. opcodeDecode
+	INSTANCE_DECODE : entity work.opcodeDecode
 		port map (
 			instr (6 downto 0),
 			wr,
-			wd);
-			
+			wd,
+			rdInMult);
+	
+	p_rdInMult : process (dataMemOut, aluResult, rdInMult) is
+	begin
+		if (rdInMult = '0') then
+			rdIn <= dataMemOut;
+		else 
+			rdIn <= aluResult;
+		end if;
+	end process p_rdInMult;
 			
 	
 	testSwitch : process (rd1,btn1,btn2,btn3) is
