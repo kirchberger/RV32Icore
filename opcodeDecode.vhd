@@ -8,7 +8,8 @@ entity opcodeDecode is
 			  rdInMult: out STD_LOGIC_VECTOR (1 downto 0);
 			  aluFirstMult : out STD_LOGIC;
 			  aluSecMult : out STD_LOGIC;
-			  pcNextMult : out STD_LOGIC);
+			  pcNextMult : out STD_LOGIC;
+			  condBranch : out STD_LOGIC);
 end opcodeDecode;
 
 architecture Behavioral of opcodeDecode is
@@ -23,6 +24,7 @@ begin
 			aluFirstMult <= '0';
 			aluSecMult <= '0';
 			pcNextMult <= '0';
+			condBranch  <= '0';
 		elsif (opcode = "0010111") then --AUIPC
 			wr <= '1'; 
 			wd <= '0';
@@ -30,6 +32,7 @@ begin
 			aluFirstMult <= '0'; -- pc
 			aluSecMult <= '0'; -- imm
 			pcNextMult <= '0';
+			condBranch  <= '0';
 		elsif (opcode = "1101111") then -- JAL
 			wr <= '1'; -- writing next address
 			wd <= '0';
@@ -37,6 +40,7 @@ begin
 			aluFirstMult <= '0'; -- pc
 			aluSecMult <= '0'; -- imm
 			pcNextMult <= '1'; -- alu
+			condBranch  <= '0';
 		elsif (opcode = "1100111") then -- JALR
 			wr <= '1'; 
 			wd <= '0';
@@ -44,13 +48,15 @@ begin
 			aluFirstMult <= '1'; -- rd1
 			aluSecMult <= '0'; -- imm
 			pcNextMult <= '1'; -- alu
+			condBranch  <= '0';
 		elsif (opcode = "1100011") then -- Conditional Branch Instructions NEEDS WORK !!!
-			wr <= '1'; -- writing next address
+			wr <= '0'; -- writing next address
 			wd <= '0';
-			rdInMult <= "10"; -- pc +4 is written
-			aluFirstMult <= '1'; -- first is rd1
-			aluSecMult <= '0'; -- sec is immediate
-			pcNextMult <= '1'; -- ALU result is next
+			rdInMult <= "10";
+			aluFirstMult <= '1'; -- rd1
+			aluSecMult <= '1'; -- rd2
+			pcNextMult <= '0';
+			condBranch  <= '1';
 		elsif (opcode = "0000011") then -- Load Instructions
 			wr <= '1';
 			wd <= '0';
@@ -58,6 +64,7 @@ begin
 			aluFirstMult <= '1'; -- rd1 
 			aluSecMult <= '0'; -- imm
 			pcNextMult <= '0';
+			condBranch  <= '0';
 		elsif (opcode = "0100011") then -- Store instructions
 			wr <= '0';
 			wd <= '1';
@@ -65,6 +72,7 @@ begin
 			aluFirstMult <= '1'; -- rd1
 			aluSecMult <= '0'; -- imm
 			pcNextMult <= '0';
+			condBranch  <= '0';
 		elsif (opcode = "0010011") then -- Reg Immediate Operations
 			wr <= '1';
 			wd <= '0';
@@ -72,6 +80,7 @@ begin
 			aluFirstMult <= '1'; -- rd1
 			aluSecMult <= '0'; -- imm
 			pcNextMult <= '0';
+			condBranch  <= '0';
 		elsif (opcode = "0110011") then  -- Reg Reg Operations
 			wr <= '1';
 			wd <= '0';
@@ -79,6 +88,7 @@ begin
 			aluFirstMult <= '1'; -- rd1
 			aluSecMult <= '1'; -- rd2
 			pcNextMult <= '0';
+			condBranch  <= '0';
 		elsif (opcode = "0001111") then -- FENCE (NOT SURE)
 			wr <= '0';
 			wd <= '0';
@@ -86,6 +96,7 @@ begin
 			aluFirstMult <= '0';
 			aluSecMult <= '0';
 			pcNextMult <= '0';
+			condBranch  <= '0';
 		elsif (opcode = "1110011") then -- Environment or Break 
 			wr <= '0';
 			wd <= '0';
@@ -94,6 +105,7 @@ begin
 			aluFirstMult <= '0';
 			aluSecMult <= '0';
 			pcNextMult <= '0';
+			condBranch  <= '0';
 		else 
 			wr <= '0';
 			wd <= '0';
@@ -101,6 +113,7 @@ begin
 			aluFirstMult <= '0';
 			aluSecMult <= '0';
 			pcNextMult <= '0';
+			condBranch  <= '0';
 		end if;
 	end process decode;
 

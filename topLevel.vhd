@@ -20,6 +20,8 @@ signal pcInc : STD_LOGIC_VECTOR (31 downto 0);
 signal pcNext : STD_LOGIC_VECTOR (31 downto 0);
 signal instr : STD_LOGIC_VECTOR (31 downto 0);
 signal pcNextMult : STD_LOGIC;
+signal condBranch : STD_LOGIC;
+signal branchTrue : STD_LOGIC;
 
 -- Register Signals
 signal rd1 : STD_LOGIC_VECTOR (31 downto 0);
@@ -58,7 +60,10 @@ begin
 	INSTANCE_PCINC : entity work.pcIncrementor
 		port map (
 			pc,
-			pcInc);
+			pcInc,
+			immExtend,
+			condBranch,
+			branchTrue);
 	
 	-- Should be updated to a memory controller
 	INSTANCE_PROGMEM : entity work.programMemory
@@ -100,7 +105,8 @@ begin
 		port map (
 			aluFirst,
 			aluSecond,
-			aluResult);
+			aluResult,
+			branchTrue);
 			
 	INSTANCE_DECODE : entity work.opcodeDecode
 		port map (
@@ -110,7 +116,8 @@ begin
 			rdInMult,
 			aluFirstMult,
 			aluSecMult,
-			pcNextMult);
+			pcNextMult,
+			condBranch);
 	
 	p_rdInMult : process (immExtend, aluResult, pcInc, dataMemOut, rdInMult) is
 	begin

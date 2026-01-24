@@ -37,7 +37,7 @@ Setup/Hold to clock clk
             |Max Setup to|  Process   |Max Hold to |  Process   |                  | Clock  |
 Source      | clk (edge) |   Corner   | clk (edge) |   Corner   |Internal Clock(s) | Phase  |
 ------------+------------+------------+------------+------------+------------------+--------+
-enable      |    2.364(R)|      SLOW  |    2.404(R)|      SLOW  |clk_BUFGP         |   0.000|
+enable      |    0.517(R)|      SLOW  |    1.875(R)|      SLOW  |clk_BUFGP         |   0.000|
 ------------+------------+------------+------------+------------+------------------+--------+
 
 Clock clk to Pad
@@ -45,14 +45,14 @@ Clock clk to Pad
             |Max (slowest) clk|  Process   |Min (fastest) clk|  Process   |                  | Clock  |
 Destination |  (edge) to PAD  |   Corner   |  (edge) to PAD  |   Corner   |Internal Clock(s) | Phase  |
 ------------+-----------------+------------+-----------------+------------+------------------+--------+
-test<0>     |        23.673(R)|      SLOW  |         7.055(R)|      FAST  |clk_BUFGP         |   0.000|
-test<1>     |        23.172(R)|      SLOW  |         7.049(R)|      FAST  |clk_BUFGP         |   0.000|
-test<2>     |        23.028(R)|      SLOW  |         6.350(R)|      FAST  |clk_BUFGP         |   0.000|
-test<3>     |        22.847(R)|      SLOW  |         6.406(R)|      FAST  |clk_BUFGP         |   0.000|
-test<4>     |        23.042(R)|      SLOW  |         6.760(R)|      FAST  |clk_BUFGP         |   0.000|
-test<5>     |        23.040(R)|      SLOW  |         6.438(R)|      FAST  |clk_BUFGP         |   0.000|
-test<6>     |        22.307(R)|      SLOW  |         6.602(R)|      FAST  |clk_BUFGP         |   0.000|
-test<7>     |        21.907(R)|      SLOW  |         6.113(R)|      FAST  |clk_BUFGP         |   0.000|
+test<0>     |        22.493(R)|      SLOW  |         6.611(R)|      FAST  |clk_BUFGP         |   0.000|
+test<1>     |        22.045(R)|      SLOW  |         6.634(R)|      FAST  |clk_BUFGP         |   0.000|
+test<2>     |        22.146(R)|      SLOW  |         6.389(R)|      FAST  |clk_BUFGP         |   0.000|
+test<3>     |        21.927(R)|      SLOW  |         6.733(R)|      FAST  |clk_BUFGP         |   0.000|
+test<4>     |        21.770(R)|      SLOW  |         6.732(R)|      FAST  |clk_BUFGP         |   0.000|
+test<5>     |        22.294(R)|      SLOW  |         6.577(R)|      FAST  |clk_BUFGP         |   0.000|
+test<6>     |        20.616(R)|      SLOW  |         6.527(R)|      FAST  |clk_BUFGP         |   0.000|
+test<7>     |        20.381(R)|      SLOW  |         6.692(R)|      FAST  |clk_BUFGP         |   0.000|
 ------------+-----------------+------------+-----------------+------------+------------------+--------+
 
 Clock to Setup on destination clock clk
@@ -60,41 +60,41 @@ Clock to Setup on destination clock clk
                | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
 Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
 ---------------+---------+---------+---------+---------+
-clk            |   18.169|         |         |         |
+clk            |   17.413|         |         |         |
 ---------------+---------+---------+---------+---------+
 
 Pad to Pad
 ---------------+---------------+---------+
 Source Pad     |Destination Pad|  Delay  |
 ---------------+---------------+---------+
-btn1           |test<0>        |   11.074|
-btn1           |test<1>        |   11.175|
-btn1           |test<2>        |   11.222|
-btn1           |test<3>        |   10.795|
-btn1           |test<4>        |   11.641|
-btn1           |test<5>        |   11.227|
-btn1           |test<6>        |   10.628|
-btn1           |test<7>        |   11.525|
-btn2           |test<0>        |   11.714|
-btn2           |test<1>        |   11.622|
-btn2           |test<2>        |   11.400|
-btn2           |test<3>        |   10.686|
-btn2           |test<4>        |   11.893|
-btn2           |test<5>        |   11.582|
-btn2           |test<6>        |   10.873|
-btn2           |test<7>        |   11.267|
-btn3           |test<0>        |   11.708|
-btn3           |test<1>        |   11.787|
-btn3           |test<2>        |   11.748|
-btn3           |test<3>        |   11.372|
-btn3           |test<4>        |   11.662|
-btn3           |test<5>        |   11.480|
-btn3           |test<6>        |   10.859|
-btn3           |test<7>        |   11.240|
+btn1           |test<0>        |   11.995|
+btn1           |test<1>        |   11.089|
+btn1           |test<2>        |   11.119|
+btn1           |test<3>        |   10.909|
+btn1           |test<4>        |   11.310|
+btn1           |test<5>        |   11.151|
+btn1           |test<6>        |   11.656|
+btn1           |test<7>        |   11.134|
+btn2           |test<0>        |   11.423|
+btn2           |test<1>        |   11.719|
+btn2           |test<2>        |   11.645|
+btn2           |test<3>        |   10.978|
+btn2           |test<4>        |   11.601|
+btn2           |test<5>        |   10.782|
+btn2           |test<6>        |   10.960|
+btn2           |test<7>        |   11.913|
+btn3           |test<0>        |   11.645|
+btn3           |test<1>        |   11.456|
+btn3           |test<2>        |   11.542|
+btn3           |test<3>        |   10.933|
+btn3           |test<4>        |   11.572|
+btn3           |test<5>        |   11.150|
+btn3           |test<6>        |   11.091|
+btn3           |test<7>        |   11.384|
 ---------------+---------------+---------+
 
 
-Analysis completed Sat Jan 24 15:23:31 2026 
+Analysis completed Sat Jan 24 16:43:54 2026 
 --------------------------------------------------------------------------------
 
 Trace Settings:
