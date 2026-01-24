@@ -16,22 +16,29 @@ end topLevel;
 architecture Behavioral of topLevel is
 -- Program Counter Signals
 signal pc : STD_LOGIC_VECTOR (31 downto 0);
+signal pcInc : STD_LOGIC_VECTOR (31 downto 0);
 signal pcNext : STD_LOGIC_VECTOR (31 downto 0);
 signal instr : STD_LOGIC_VECTOR (31 downto 0);
+signal pcNextMult : STD_LOGIC;
 
 -- Register Signals
 signal rd1 : STD_LOGIC_VECTOR (31 downto 0);
 signal rd2 : STD_LOGIC_VECTOR (31 downto 0);
 signal rdIn : STD_LOGIC_VECTOR (31 downto 0);
 signal wr : STD_LOGIC;
-signal rdInMult: STD_LOGIC;
+signal rdInMult: STD_LOGIC_VECTOR (1 downto 0);
 
 -- Data Memory Signals
 signal dataMemOut : STD_LOGIC_VECTOR (31 downto 0);
 signal wd : STD_LOGIC;
 
 -- ALU Signals
+signal aluFirst : STD_LOGIC_VECTOR (31 downto 0);
+signal aluSecond : STD_LOGIC_VECTOR (31 downto 0);
 signal aluResult : STD_LOGIC_VECTOR (31 downto 0);
+signal aluFirstMult: STD_LOGIC;
+signal aluSecMult: STD_LOGIC;
+
 
 -- Imm Signals
 signal immExtend : STD_LOGIC_VECTOR (31 downto 0);
@@ -51,7 +58,7 @@ begin
 	INSTANCE_PCINC : entity work.pcIncrementor
 		port map (
 			pc,
-			pcNext);
+			pcInc);
 	
 	-- Should be updated to a memory controller
 	INSTANCE_PROGMEM : entity work.programMemory
@@ -91,8 +98,8 @@ begin
 	-- should change to raw logic that synthesises better
 	INSTANCE_ALU : entity work.ALU
 		port map (
-			rd1,
-			immExtend,
+			aluFirst,
+			aluSecond,
 			aluResult);
 			
 	INSTANCE_DECODE : entity work.opcodeDecode
@@ -100,17 +107,55 @@ begin
 			instr (6 downto 0),
 			wr,
 			wd,
-			rdInMult);
+			rdInMult,
+			aluFirstMult,
+			aluSecMult,
+			pcNextMult);
 	
-	p_rdInMult : process (dataMemOut, aluResult, rdInMult) is
+	p_rdInMult : process (immExtend, aluResult, pcInc, dataMemOut, rdInMult) is
 	begin
-		if (rdInMult = '0') then
-			rdIn <= dataMemOut;
-		else 
+		if (rdInMult = "00") then
+			rdIn <= immExtend;
+		elsif (rdInMult = "01") then
 			rdIn <= aluResult;
+		elsif (rdInMult = "10") then
+			rdIn <= pcInc;
+		else 
+			rdIn <= dataMemOut;
 		end if;
 	end process p_rdInMult;
+	
+	p_aluFirstMult : process (pc, rd1, aluFirstMult) is
+	begin
+		if (aluFirstMult = '0') then
+			aluFirst <= pc;
+		else 
+			aluFirst <= rd1;
+		end if;
+	end process p_aluFirstMult;
+	
+	p_aluSecMult : process (immExtend, rd2, aluSecMult) is
+	begin
+		if (aluSecMult = '0') then
+			aluSecond <= immExtend;
+		else 
+			aluSecond <= rd2;
+		end if;
+	end process p_aluSecMult;
+	
+	p_pcNextMult : process (pcInc, aluResult, pcNextMult) is
+	begin
+		if (pcNextMult = '0') then
+			pcNext <= pcInc;
+		else 
+			pcNext <= aluResult;
+		end if;
+	end process p_pcNextMult;
 			
+	
+	
+	
+	
 	
 	testSwitch : process (rd1,btn1,btn2,btn3) is
 	begin

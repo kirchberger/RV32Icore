@@ -32,40 +32,43 @@ signal mem15 : std_logic_vector (31 downto 0) := "000000000000011110000000000000
 
 begin
 
-  dataMemoryLoad : process (addr) is
+  dataMemoryLoad : process (addr, mem0, mem1, mem2, mem3, mem4, mem5, mem6, mem7,
+										mem8, mem9, mem10, mem11, mem12, mem13, mem14, mem15) is
 	begin
-		if addr (5 downto 0) = "000000" then
+		if addr (31 downto 0) = "00000000000000000000000000000000" then
 			dataOut <= mem0;
-		elsif addr (5 downto 0) = "000100" then
+		elsif addr (31 downto 0) = "00000000000000000000000000000100" then
 			dataOut <= mem1;
-		elsif addr (5 downto 0) = "001000" then
+		elsif addr (31 downto 0) = "00000000000000000000000000001000" then
 			dataOut <= mem2;
-		elsif addr (5 downto 0) = "001100" then
+		elsif addr (31 downto 0) = "00000000000000000000000000001100" then
 			dataOut <= mem3;
-		elsif addr (5 downto 0) = "010000" then
+		elsif addr (31 downto 0) = "00000000000000000000000000010000" then
 			dataOut <= mem4;
-		elsif addr (5 downto 0) = "010100" then
+		elsif addr (31 downto 0) = "00000000000000000000000000010100" then
 			dataOut <= mem5;
-		elsif addr (5 downto 0) = "011000" then
+		elsif addr (31 downto 0) = "00000000000000000000000000011000" then
 			dataOut <= mem6;
-		elsif addr (5 downto 0) = "011100" then
+		elsif addr (31 downto 0) = "00000000000000000000000000011100" then
 			dataOut <= mem7;
-		elsif addr (5 downto 0) = "100000" then
+		elsif addr (31 downto 0) = "00000000000000000000000000100000" then
 			dataOut <= mem8;
-		elsif addr (5 downto 0) = "100100" then
+		elsif addr (31 downto 0) = "00000000000000000000000000100100" then
 			dataOut <= mem9;
-		elsif addr (5 downto 0) = "101000" then
+		elsif addr (31 downto 0) = "00000000000000000000000000101000" then
 			dataOut <= mem10;
-		elsif addr (5 downto 0) = "101100" then
+		elsif addr (31 downto 0) = "00000000000000000000000000101100" then
 			dataOut <= mem11;
-		elsif addr (5 downto 0) = "110000" then
+		elsif addr (31 downto 0) = "00000000000000000000000000110000" then
 			dataOut <= mem12;
-		elsif addr (5 downto 0) = "110100" then
+		elsif addr (31 downto 0) = "00000000000000000000000000110100" then
 			dataOut <= mem13;
-		elsif addr (5 downto 0) = "111000" then
+		elsif addr (31 downto 0) = "00000000000000000000000000111000" then
 			dataOut <= mem14;
-		elsif addr (5 downto 0) = "111100" then
+		elsif addr (31 downto 0) = "00000000000000000000000000111100" then
 			dataOut <= mem15;
+		else 
+			dataOut <= "00000000000000000000000000000000";
 		end if;
 	
 	

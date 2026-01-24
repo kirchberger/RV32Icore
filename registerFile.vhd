@@ -22,12 +22,12 @@ type reg is array(0 to 31) of STD_LOGIC_VECTOR (31 downto 0);
 signal x : reg;
 begin
 	
-	rs1Load : process (rs1) is
+	rs1Load : process (rs1, x) is
 	begin
 		rd1 <= x(to_integer(unsigned(rs1)));
 	end process rs1Load;
 	
-	rs2Load : process (rs2) is
+	rs2Load : process (rs2, x) is
 	begin
 		rd2 <= x(to_integer(unsigned(rs2)));
 	end process rs2Load;

@@ -36,38 +36,40 @@ constant ins15 : std_logic_vector (31 downto 0) := "0000000000000111100000000000
 begin
 	memoryLoad : process (pc) is
 	begin
-		if pc (5 downto 0) = "000000" then
+		if pc (31 downto 0) = "00000000000000000000000000000000" then
 			instruction <= ins0;
-		elsif pc (5 downto 0) = "000100" then
+		elsif pc (31 downto 0) = "00000000000000000000000000000100" then
 			instruction <= ins1;
-		elsif pc (5 downto 0) = "001000" then
+		elsif pc (31 downto 0) = "00000000000000000000000000001000" then
 			instruction <= ins2;
-		elsif pc (5 downto 0) = "001100" then
+		elsif pc (31 downto 0) = "00000000000000000000000000001100" then
 			instruction <= ins3;
-		elsif pc (5 downto 0) = "010000" then
+		elsif pc (31 downto 0) = "00000000000000000000000000010000" then
 			instruction <= ins4;
-		elsif pc (5 downto 0) = "010100" then
+		elsif pc (31 downto 0) = "00000000000000000000000000010100" then
 			instruction <= ins5;
-		elsif pc (5 downto 0) = "011000" then
+		elsif pc (31 downto 0) = "00000000000000000000000000011000" then
 			instruction <= ins6;
-		elsif pc (5 downto 0) = "011100" then
+		elsif pc (31 downto 0) = "00000000000000000000000000011100" then
 			instruction <= ins7;
-		elsif pc (5 downto 0) = "100000" then
+		elsif pc (31 downto 0) = "00000000000000000000000000100000" then
 			instruction <= ins8;
-		elsif pc (5 downto 0) = "100100" then
+		elsif pc (31 downto 0) = "00000000000000000000000000100100" then
 			instruction <= ins9;
-		elsif pc (5 downto 0) = "101000" then
+		elsif pc (31 downto 0) = "00000000000000000000000000101000" then
 			instruction <= ins10;
-		elsif pc (5 downto 0) = "101100" then
+		elsif pc (31 downto 0) = "00000000000000000000000000101100" then
 			instruction <= ins11;
-		elsif pc (5 downto 0) = "110000" then
+		elsif pc (31 downto 0) = "00000000000000000000000000110000" then
 			instruction <= ins12;
-		elsif pc (5 downto 0) = "110100" then
+		elsif pc (31 downto 0) = "00000000000000000000000000110100" then
 			instruction <= ins13;
-		elsif pc (5 downto 0) = "111000" then
+		elsif pc (31 downto 0) = "00000000000000000000000000111000" then
 			instruction <= ins14;
-		elsif pc (5 downto 0) = "111100" then
+		elsif pc (31 downto 0) = "00000000000000000000000000111100" then
 			instruction <= ins15;
+		else
+			instruction <= "00000000000000000000000000000000";
 		end if;
 	end process memoryLoad;
 	
