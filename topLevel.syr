@@ -4,15 +4,15 @@ Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
 Parameter TMPDIR set to xst/projnav.tmp
 
 
-Total REAL time to Xst completion: 1.00 secs
-Total CPU time to Xst completion: 0.05 secs
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.04 secs
  
 --> 
 Parameter xsthdpdir set to xst
 
 
-Total REAL time to Xst completion: 1.00 secs
-Total CPU time to Xst completion: 0.05 secs
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.04 secs
  
 --> 
 Reading design: topLevel.prj
@@ -164,6 +164,9 @@ Elaborating entity <opcodeDecode> (architecture <Behavioral>) from library <work
 
 Synthesizing Unit <topLevel>.
     Related source file is "/home/Alex/Documents/dailyprojects/RV32Icore/topLevel.vhd".
+INFO:Xst:3210 - "/home/Alex/Documents/dailyprojects/RV32Icore/topLevel.vhd" line 115: Output port <aluFunc3> of the instance <INSTANCE_DECODE> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "/home/Alex/Documents/dailyprojects/RV32Icore/topLevel.vhd" line 115: Output port <shamt> of the instance <INSTANCE_DECODE> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "/home/Alex/Documents/dailyprojects/RV32Icore/topLevel.vhd" line 115: Output port <aluFunc7> of the instance <INSTANCE_DECODE> is unconnected or connected to loadless signal.
     Found 32-bit 4-to-1 multiplexer for signal <rdIn> created at line 29.
     Summary:
 	inferred   7 Multiplexer(s).
@@ -239,10 +242,12 @@ Unit <ALU> synthesized.
 
 Synthesizing Unit <opcodeDecode>.
     Related source file is "/home/Alex/Documents/dailyprojects/RV32Icore/opcodeDecode.vhd".
+WARNING:Xst:647 - Input <func7<9:5>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:647 - Input <func7<11:11>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
     Found 128x2-bit Read Only RAM for signal <rdInMult>
     Summary:
 	inferred   1 RAM(s).
-	inferred  20 Multiplexer(s).
+	inferred  23 Multiplexer(s).
 Unit <opcodeDecode> synthesized.
 
 =========================================================================
@@ -257,10 +262,12 @@ Macro Statistics
  32-bit adder                                          : 2
 # Registers                                            : 17
  32-bit register                                       : 17
-# Multiplexers                                         : 51
- 1-bit 2-to-1 multiplexer                              : 20
+# Multiplexers                                         : 54
+ 1-bit 2-to-1 multiplexer                              : 21
+ 3-bit 2-to-1 multiplexer                              : 1
  32-bit 2-to-1 multiplexer                             : 27
  32-bit 4-to-1 multiplexer                             : 1
+ 5-bit 2-to-1 multiplexer                              : 1
  8-bit 2-to-1 multiplexer                              : 3
 
 =========================================================================
@@ -346,10 +353,12 @@ Macro Statistics
  32-bit adder                                          : 2
 # Registers                                            : 544
  Flip-Flops                                            : 544
-# Multiplexers                                         : 51
- 1-bit 2-to-1 multiplexer                              : 20
+# Multiplexers                                         : 54
+ 1-bit 2-to-1 multiplexer                              : 21
+ 3-bit 2-to-1 multiplexer                              : 1
  32-bit 2-to-1 multiplexer                             : 27
  32-bit 4-to-1 multiplexer                             : 1
+ 5-bit 2-to-1 multiplexer                              : 1
  8-bit 2-to-1 multiplexer                              : 3
 
 =========================================================================
@@ -403,12 +412,12 @@ Primitive and Black Box Usage:
 #      INV                         : 1
 #      LUT1                        : 29
 #      LUT2                        : 54
-#      LUT3                        : 47
-#      LUT4                        : 67
-#      LUT5                        : 123
-#      LUT6                        : 466
+#      LUT3                        : 79
+#      LUT4                        : 68
+#      LUT5                        : 92
+#      LUT6                        : 465
 #      MUXCY                       : 60
-#      MUXF7                       : 59
+#      MUXF7                       : 58
 #      VCC                         : 1
 #      XORCY                       : 62
 # FlipFlops/Latches                : 544
@@ -430,16 +439,16 @@ Selected Device : 6slx9csg324-2
 
 Slice Logic Utilization: 
  Number of Slice Registers:             544  out of  11440     4%  
- Number of Slice LUTs:                  835  out of   5720    14%  
-    Number used as Logic:               787  out of   5720    13%  
+ Number of Slice LUTs:                  836  out of   5720    14%  
+    Number used as Logic:               788  out of   5720    13%  
     Number used as Memory:               48  out of   1440     3%  
        Number used as RAM:               48
 
 Slice Logic Distribution: 
- Number of LUT Flip Flop pairs used:   1299
-   Number with an unused Flip Flop:     755  out of   1299    58%  
-   Number with an unused LUT:           464  out of   1299    35%  
-   Number of fully used LUT-FF pairs:    80  out of   1299     6%  
+ Number of LUT Flip Flop pairs used:   1298
+   Number with an unused Flip Flop:     754  out of   1298    58%  
+   Number with an unused LUT:           462  out of   1298    35%  
+   Number of fully used LUT-FF pairs:    82  out of   1298     6%  
    Number of unique control sets:        17
 
 IO Utilization: 
@@ -481,9 +490,9 @@ Timing Summary:
 ---------------
 Speed Grade: -2
 
-   Minimum period: 15.481ns (Maximum Frequency: 64.594MHz)
+   Minimum period: 15.001ns (Maximum Frequency: 66.663MHz)
    Minimum input arrival time before clock: 3.149ns
-   Maximum output required time after clock: 12.469ns
+   Maximum output required time after clock: 12.025ns
    Maximum combinational path delay: 7.723ns
 
 Timing Details:
@@ -492,10 +501,10 @@ All values displayed in nanoseconds (ns)
 
 =========================================================================
 Timing constraint: Default period analysis for Clock 'clk'
-  Clock period: 15.481ns (frequency: 64.594MHz)
-  Total number of paths / destination ports: 19746571 / 1176
+  Clock period: 15.001ns (frequency: 66.663MHz)
+  Total number of paths / destination ports: 19746717 / 1176
 -------------------------------------------------------------------------
-Delay:               15.481ns (Levels of Logic = 12)
+Delay:               15.001ns (Levels of Logic = 12)
   Source:            INSTANCE_PC/Output_3 (FF)
   Destination:       INSTANCE_REGFILE/Mram_x3 (RAM)
   Source Clock:      clk rising
@@ -506,22 +515,22 @@ Delay:               15.481ns (Levels of Logic = 12)
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
      FDE:C->Q             16   0.525   1.637  INSTANCE_PC/Output_3 (INSTANCE_PC/Output_3)
-     LUT6:I0->O           59   0.254   1.891  INSTANCE_PROGMEM/Mram__n004922 (INSTANCE_PROGMEM/_n0049<30>)
-     LUT4:I3->O            3   0.254   0.766  INSTANCE_DECODE/Mmux_aluFirstMult11_SW0 (N162)
-     LUT5:I4->O           11   0.254   1.039  INSTANCE_DECODE/Mmux_aluFirstMult11_1 (INSTANCE_DECODE/Mmux_aluFirstMult11)
+     LUT6:I0->O           27   0.254   1.436  INSTANCE_PROGMEM/Mram__n004922 (INSTANCE_PROGMEM/_n0049<30>)
+     LUT4:I3->O            4   0.254   0.804  INSTANCE_DECODE/Mmux_aluFirstMult12_SW0 (N164)
+     LUT5:I4->O            9   0.254   0.976  INSTANCE_DECODE/Mmux_aluFirstMult12_1 (INSTANCE_DECODE/Mmux_aluFirstMult12)
      LUT6:I5->O            1   0.254   0.000  INSTANCE_ALU/Madd_Output_lut<0> (INSTANCE_ALU/Madd_Output_lut<0>)
      MUXCY:S->O            1   0.215   0.000  INSTANCE_ALU/Madd_Output_cy<0> (INSTANCE_ALU/Madd_Output_cy<0>)
-     XORCY:CI->O         159   0.206   2.803  INSTANCE_ALU/Madd_Output_xor<1> (aluResult<1>)
+     XORCY:CI->O         158   0.206   2.801  INSTANCE_ALU/Madd_Output_xor<1> (aluResult<1>)
      LUT6:I1->O           15   0.254   1.383  INSTANCE_DATAMEM/_n0818<5>1_1 (INSTANCE_DATAMEM/_n0818<5>1)
      LUT6:I3->O            2   0.235   1.156  Mmux_rdIn37 (Mmux_rdIn38)
      LUT6:I1->O            1   0.254   0.000  Mmux_rdIn331_SW1_G (N654)
-     MUXF7:I1->O           1   0.175   0.682  Mmux_rdIn331_SW1 (N456)
-     LUT6:I5->O            1   0.254   0.000  Mmux_rdIn332_G (N582)
+     MUXF7:I1->O           1   0.175   0.682  Mmux_rdIn331_SW1 (N458)
+     LUT6:I5->O            1   0.254   0.000  Mmux_rdIn332_G (N584)
      MUXF7:I1->O           2   0.175   0.725  Mmux_rdIn332 (rdIn<11>)
      RAM32M:DIC1               0.091          INSTANCE_REGFILE/Mram_x3
     ----------------------------------------
-    Total                     15.481ns (3.400ns logic, 12.081ns route)
-                                       (22.0% logic, 78.0% route)
+    Total                     15.001ns (3.400ns logic, 11.601ns route)
+                                       (22.7% logic, 77.3% route)
 
 =========================================================================
 Timing constraint: Default OFFSET IN BEFORE for Clock 'clk'
@@ -546,7 +555,7 @@ Offset:              3.149ns (Levels of Logic = 1)
 Timing constraint: Default OFFSET OUT AFTER for Clock 'clk'
   Total number of paths / destination ports: 290 / 8
 -------------------------------------------------------------------------
-Offset:              12.469ns (Levels of Logic = 7)
+Offset:              12.025ns (Levels of Logic = 7)
   Source:            INSTANCE_PC/Output_30 (FF)
   Destination:       test<6> (PAD)
   Source Clock:      clk rising
@@ -557,15 +566,15 @@ Offset:              12.469ns (Levels of Logic = 7)
     ----------------------------------------  ------------
      FDE:C->Q              4   0.525   1.234  INSTANCE_PC/Output_30 (INSTANCE_PC/Output_30)
      LUT6:I1->O            3   0.254   1.042  INSTANCE_PROGMEM/_n0050<31>1 (INSTANCE_PROGMEM/_n0050<31>)
-     LUT6:I2->O           62   0.254   1.914  INSTANCE_PROGMEM/_n0050<31>5 (INSTANCE_PROGMEM/_n0050)
+     LUT6:I2->O           29   0.254   1.470  INSTANCE_PROGMEM/_n0050<31>5 (INSTANCE_PROGMEM/_n0050)
      LUT2:I1->O           17   0.254   1.208  INSTANCE_PROGMEM/Mmux_instruction71 (instr<15>)
      RAM32X1D:DPRA0->DPO    3   0.235   0.766  INSTANCE_REGFILE/Mram_x71 (rd1<30>)
      LUT5:I4->O            1   0.254   0.682  test<6>1 (test<6>1)
      LUT6:I5->O            1   0.254   0.681  test<6>2 (test_6_OBUF)
      OBUF:I->O                 2.912          test_6_OBUF (test<6>)
     ----------------------------------------
-    Total                     12.469ns (4.942ns logic, 7.527ns route)
-                                       (39.6% logic, 60.4% route)
+    Total                     12.025ns (4.942ns logic, 7.083ns route)
+                                       (41.1% logic, 58.9% route)
 
 =========================================================================
 Timing constraint: Default path analysis
@@ -597,21 +606,21 @@ Clock to Setup on destination clock clk
                | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
 Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
 ---------------+---------+---------+---------+---------+
-clk            |   15.481|         |         |         |
+clk            |   15.001|         |         |         |
 ---------------+---------+---------+---------+---------+
 
 =========================================================================
 
 
 Total REAL time to Xst completion: 8.00 secs
-Total CPU time to Xst completion: 7.84 secs
+Total CPU time to Xst completion: 8.07 secs
  
 --> 
 
 
-Total memory usage is 375888 kilobytes
+Total memory usage is 376188 kilobytes
 
 Number of errors   :    0 (   0 filtered)
-Number of warnings :    1 (   0 filtered)
-Number of infos    :    5 (   0 filtered)
+Number of warnings :    3 (   0 filtered)
+Number of infos    :    8 (   0 filtered)
 

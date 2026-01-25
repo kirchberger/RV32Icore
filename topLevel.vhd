@@ -28,18 +28,22 @@ signal rd1 : STD_LOGIC_VECTOR (31 downto 0);
 signal rd2 : STD_LOGIC_VECTOR (31 downto 0);
 signal rdIn : STD_LOGIC_VECTOR (31 downto 0);
 signal wr : STD_LOGIC;
-signal rdInMult: STD_LOGIC_VECTOR (1 downto 0);
+signal rdInMult : STD_LOGIC_VECTOR (1 downto 0);
 
 -- Data Memory Signals
 signal dataMemOut : STD_LOGIC_VECTOR (31 downto 0);
 signal wd : STD_LOGIC;
+-- signal dataMemFunc3 : STD_LOGIC_VECTOR (3 downto 0);
 
 -- ALU Signals
 signal aluFirst : STD_LOGIC_VECTOR (31 downto 0);
 signal aluSecond : STD_LOGIC_VECTOR (31 downto 0);
 signal aluResult : STD_LOGIC_VECTOR (31 downto 0);
-signal aluFirstMult: STD_LOGIC;
-signal aluSecMult: STD_LOGIC;
+signal aluFirstMult : STD_LOGIC;
+signal aluSecMult : STD_LOGIC;
+signal aluFunc3 : STD_LOGIC_VECTOR (2 downto 0);
+signal aluFunc7 : STD_LOGIC;
+signal shamt : STD_LOGIC_VECTOR (4 downto 0);
 
 
 -- Imm Signals
@@ -111,13 +115,18 @@ begin
 	INSTANCE_DECODE : entity work.opcodeDecode
 		port map (
 			instr (6 downto 0),
+			instr (14 downto 12),
+			instr (31 downto 20),
 			wr,
 			wd,
 			rdInMult,
 			aluFirstMult,
 			aluSecMult,
 			pcNextMult,
-			condBranch);
+			condBranch,
+			aluFunc3,
+			aluFunc7,
+			shamt);
 	
 	p_rdInMult : process (immExtend, aluResult, pcInc, dataMemOut, rdInMult) is
 	begin
