@@ -43,7 +43,6 @@ signal aluFirstMult : STD_LOGIC;
 signal aluSecMult : STD_LOGIC;
 signal aluFunc3 : STD_LOGIC_VECTOR (2 downto 0);
 signal aluFunc7 : STD_LOGIC;
-signal shamt : STD_LOGIC_VECTOR (4 downto 0);
 
 
 -- Imm Signals
@@ -110,7 +109,10 @@ begin
 			aluFirst,
 			aluSecond,
 			aluResult,
-			branchTrue);
+			condBranch,
+			branchTrue,
+			aluFunc3,
+			aluFunc7);
 			
 	INSTANCE_DECODE : entity work.opcodeDecode
 		port map (
@@ -125,8 +127,7 @@ begin
 			pcNextMult,
 			condBranch,
 			aluFunc3,
-			aluFunc7,
-			shamt);
+			aluFunc7);
 	
 	p_rdInMult : process (immExtend, aluResult, pcInc, dataMemOut, rdInMult) is
 	begin

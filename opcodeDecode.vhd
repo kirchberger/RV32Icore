@@ -13,8 +13,7 @@ entity opcodeDecode is
 			  pcNextMult : out STD_LOGIC;
 			  condBranch : out STD_LOGIC;
 			  aluFunc3 : out STD_LOGIC_VECTOR (2 downto 0);
-			  aluFunc7 : out STD_LOGIC;
-			  shamt : out STD_LOGIC_VECTOR (4 downto 0));
+			  aluFunc7 : out STD_LOGIC);
 end opcodeDecode;
 
 architecture Behavioral of opcodeDecode is
@@ -32,7 +31,6 @@ begin
 			condBranch  <= '0';
 			aluFunc3 <= "000";
 			aluFunc7 <= '0';
-			shamt <= "00000";
 		elsif (opcode = "0010111") then --AUIPC
 			wr <= '1'; 
 			wd <= '0';
@@ -43,7 +41,6 @@ begin
 			condBranch  <= '0';
 			aluFunc3 <= "000";
 			aluFunc7 <= '0';
-			shamt <= "00000";
 		elsif (opcode = "1101111") then -- JAL
 			wr <= '1'; -- writing next address
 			wd <= '0';
@@ -54,7 +51,6 @@ begin
 			condBranch  <= '0';
 			aluFunc3 <= "000";
 			aluFunc7 <= '0';
-			shamt <= "00000";
 		elsif (opcode = "1100111") then -- JALR
 			wr <= '1'; 
 			wd <= '0';
@@ -65,7 +61,6 @@ begin
 			condBranch  <= '0';
 			aluFunc3 <= "000";
 			aluFunc7 <= '0';
-			shamt <= "00000";
 		elsif (opcode = "1100011") then -- Conditional Branch Instructions
 			wr <= '0'; --
 			wd <= '0';
@@ -76,7 +71,6 @@ begin
 			condBranch  <= '1';
 			aluFunc3 <= func3;
 			aluFunc7 <= '0';
-			shamt <= "00000";
 		elsif (opcode = "0000011") then -- Load Instructions
 			wr <= '1';
 			wd <= '0';
@@ -87,7 +81,6 @@ begin
 			condBranch  <= '0';
 			aluFunc3 <= func3;
 			aluFunc7 <= '0';
-			shamt <= "00000";
 		elsif (opcode = "0100011") then -- Store instructions
 			wr <= '0';
 			wd <= '1';
@@ -98,7 +91,6 @@ begin
 			condBranch  <= '0';
 			aluFunc3 <= func3;
 			aluFunc7 <= '0';
-			shamt <= "00000";
 		elsif (opcode = "0010011") then -- Reg Immediate Operations
 			wr <= '1';
 			wd <= '0';
@@ -108,8 +100,11 @@ begin
 			pcNextMult <= '0';
 			condBranch  <= '0';
 			aluFunc3 <= func3;
-			aluFunc7 <= '0';
-			shamt <= "00000";
+			if (func3 = "101") then
+				aluFunc7 <= func7(10);
+			else
+				aluFunc7 <= '0';
+			end if;
 		elsif (opcode = "0110011") then  -- Reg Reg Operations
 			wr <= '1';
 			wd <= '0';
@@ -120,7 +115,6 @@ begin
 			condBranch  <= '0';
 			aluFunc3 <= func3;
 			aluFunc7 <= func7(10);
-			shamt <= func7 (4 downto 0);
 		elsif (opcode = "0001111") then -- FENCE (NOT SURE)
 			wr <= '0';
 			wd <= '0';
@@ -131,7 +125,6 @@ begin
 			condBranch  <= '0';
 			aluFunc3 <= "000";
 			aluFunc7 <= '0';
-			shamt <= "00000";
 		elsif (opcode = "1110011") then -- Environment or Break 
 			wr <= '0';
 			wd <= '0';
@@ -142,7 +135,6 @@ begin
 			condBranch  <= '0';
 			aluFunc3 <= "000";
 			aluFunc7 <= '0';
-			shamt <= "00000";
 		else 
 			wr <= '0';
 			wd <= '0';
@@ -153,7 +145,6 @@ begin
 			condBranch  <= '0';
 			aluFunc3 <= "000";
 			aluFunc7 <= '0';
-			shamt <= "00000";
 		end if;
 	end process decode;
 

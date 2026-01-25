@@ -5,19 +5,7 @@
      behavior or data corruption.  It is strongly advised that
      users do not edit the contents of this file. -->
 <messages>
-<msg type="info" file="Xst" num="3210" delta="new" >&quot;<arg fmt="%s" index="1">/home/Alex/Documents/dailyprojects/RV32Icore/topLevel.vhd</arg>&quot; line <arg fmt="%s" index="2">115</arg>: Output port &lt;<arg fmt="%s" index="3">aluFunc3</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">INSTANCE_DECODE</arg>&gt; is unconnected or connected to loadless signal.
-</msg>
-
-<msg type="info" file="Xst" num="3210" delta="new" >&quot;<arg fmt="%s" index="1">/home/Alex/Documents/dailyprojects/RV32Icore/topLevel.vhd</arg>&quot; line <arg fmt="%s" index="2">115</arg>: Output port &lt;<arg fmt="%s" index="3">shamt</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">INSTANCE_DECODE</arg>&gt; is unconnected or connected to loadless signal.
-</msg>
-
-<msg type="info" file="Xst" num="3210" delta="new" >&quot;<arg fmt="%s" index="1">/home/Alex/Documents/dailyprojects/RV32Icore/topLevel.vhd</arg>&quot; line <arg fmt="%s" index="2">115</arg>: Output port &lt;<arg fmt="%s" index="3">aluFunc7</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">INSTANCE_DECODE</arg>&gt; is unconnected or connected to loadless signal.
-</msg>
-
-<msg type="warning" file="Xst" num="653" delta="new" >Signal &lt;<arg fmt="%s" index="1">branchTrue</arg>&gt; is used but never assigned. This sourceless signal will be automatically connected to value <arg fmt="%s" index="2">GND</arg>.
-</msg>
-
-<msg type="warning" file="Xst" num="647" delta="new" >Input &lt;<arg fmt="%s" index="1">func7&lt;9:5&gt;</arg>&gt; is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+<msg type="warning" file="Xst" num="647" delta="new" >Input &lt;<arg fmt="%s" index="1">func7&lt;9:0&gt;</arg>&gt; is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
 </msg>
 
 <msg type="warning" file="Xst" num="647" delta="new" >Input &lt;<arg fmt="%s" index="1">func7&lt;11:11&gt;</arg>&gt; is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
