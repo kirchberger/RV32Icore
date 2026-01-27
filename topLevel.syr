@@ -233,15 +233,19 @@ Synthesizing Unit <ALU>.
     Related source file is "/home/Alex/Documents/dailyprojects/RV32Icore/ALU.vhd".
     Found 32-bit adder for signal <Input1[31]_Input2[31]_add_13_OUT> created at line 67.
     Found 32-bit subtractor for signal <Input1[31]_Input2[31]_sub_15_OUT<31:0>> created at line 69.
+    Found 32-bit shifter logical left for signal <Input1[31]_Input2[4]_shift_left_17_OUT> created at line 2955
+    Found 32-bit shifter logical right for signal <Input1[31]_Input2[4]_shift_right_27_OUT> created at line 2964
+    Found 32-bit shifter logical left for signal <Input1[31]_Input2[3]_shift_left_28_OUT> created at line 2973
     Found 1-bit 7-to-1 multiplexer for signal <GND_11_o_Input2[31]_MUX_70_o> created at line 24.
-    Found 32-bit 8-to-1 multiplexer for signal <GND_11_o_Input1[31]_mux_33_OUT> created at line 65.
+    Found 32-bit 8-to-1 multiplexer for signal <GND_11_o_Input1[31]_mux_41_OUT> created at line 65.
     Found 32-bit comparator equal for signal <Input2[31]_Input1[31]_equal_2_o> created at line 25
-    Found 32-bit comparator greater for signal <n0005> created at line 43
-    Found 32-bit comparator greater for signal <n0007> created at line 55
+    Found 32-bit comparator greater for signal <n0003> created at line 43
+    Found 32-bit comparator greater for signal <n0005> created at line 55
     Summary:
 	inferred   1 Adder/Subtractor(s).
 	inferred   3 Comparator(s).
-	inferred   4 Multiplexer(s).
+	inferred   5 Multiplexer(s).
+	inferred   3 Combinational logic shifter(s).
 Unit <ALU> synthesized.
 
 Synthesizing Unit <opcodeDecode>.
@@ -270,14 +274,17 @@ Macro Statistics
 # Comparators                                          : 3
  32-bit comparator equal                               : 1
  32-bit comparator greater                             : 2
-# Multiplexers                                         : 59
+# Multiplexers                                         : 60
  1-bit 2-to-1 multiplexer                              : 24
  1-bit 7-to-1 multiplexer                              : 1
  3-bit 2-to-1 multiplexer                              : 1
- 32-bit 2-to-1 multiplexer                             : 28
+ 32-bit 2-to-1 multiplexer                             : 29
  32-bit 4-to-1 multiplexer                             : 1
  32-bit 8-to-1 multiplexer                             : 1
  8-bit 2-to-1 multiplexer                              : 3
+# Logic shifters                                       : 3
+ 32-bit shifter logical left                           : 2
+ 32-bit shifter logical right                          : 1
 # Xors                                                 : 1
  32-bit xor2                                           : 1
 
@@ -368,14 +375,17 @@ Macro Statistics
 # Comparators                                          : 3
  32-bit comparator equal                               : 1
  32-bit comparator greater                             : 2
-# Multiplexers                                         : 59
+# Multiplexers                                         : 60
  1-bit 2-to-1 multiplexer                              : 24
  1-bit 7-to-1 multiplexer                              : 1
  3-bit 2-to-1 multiplexer                              : 1
- 32-bit 2-to-1 multiplexer                             : 28
+ 32-bit 2-to-1 multiplexer                             : 29
  32-bit 4-to-1 multiplexer                             : 1
  32-bit 8-to-1 multiplexer                             : 1
  8-bit 2-to-1 multiplexer                              : 3
+# Logic shifters                                       : 3
+ 32-bit shifter logical left                           : 2
+ 32-bit shifter logical right                          : 1
 # Xors                                                 : 1
  32-bit xor2                                           : 1
 
@@ -427,15 +437,16 @@ Top Level Output File Name         : topLevel.ngc
 
 Primitive and Black Box Usage:
 ------------------------------
-# BELS                             : 1040
+# BELS                             : 1225
 #      GND                         : 1
 #      LUT1                        : 21
-#      LUT2                        : 60
-#      LUT3                        : 77
-#      LUT4                        : 102
-#      LUT5                        : 90
-#      LUT6                        : 532
-#      MUXCY                       : 92
+#      LUT2                        : 29
+#      LUT3                        : 82
+#      LUT4                        : 143
+#      LUT5                        : 160
+#      LUT6                        : 595
+#      MUXCY                       : 91
+#      MUXF7                       : 38
 #      VCC                         : 1
 #      XORCY                       : 64
 # FlipFlops/Latches                : 544
@@ -457,16 +468,16 @@ Selected Device : 6slx9csg324-2
 
 Slice Logic Utilization: 
  Number of Slice Registers:             544  out of  11440     4%  
- Number of Slice LUTs:                  930  out of   5720    16%  
-    Number used as Logic:               882  out of   5720    15%  
+ Number of Slice LUTs:                 1078  out of   5720    18%  
+    Number used as Logic:              1030  out of   5720    18%  
     Number used as Memory:               48  out of   1440     3%  
        Number used as RAM:               48
 
 Slice Logic Distribution: 
- Number of LUT Flip Flop pairs used:   1423
-   Number with an unused Flip Flop:     879  out of   1423    61%  
-   Number with an unused LUT:           493  out of   1423    34%  
-   Number of fully used LUT-FF pairs:    51  out of   1423     3%  
+ Number of LUT Flip Flop pairs used:   1571
+   Number with an unused Flip Flop:    1027  out of   1571    65%  
+   Number with an unused LUT:           493  out of   1571    31%  
+   Number of fully used LUT-FF pairs:    51  out of   1571     3%  
    Number of unique control sets:        17
 
 IO Utilization: 
@@ -508,9 +519,9 @@ Timing Summary:
 ---------------
 Speed Grade: -2
 
-   Minimum period: 17.342ns (Maximum Frequency: 57.663MHz)
+   Minimum period: 17.611ns (Maximum Frequency: 56.783MHz)
    Minimum input arrival time before clock: 3.149ns
-   Maximum output required time after clock: 11.985ns
+   Maximum output required time after clock: 12.729ns
    Maximum combinational path delay: 7.569ns
 
 Timing Details:
@@ -519,39 +530,36 @@ All values displayed in nanoseconds (ns)
 
 =========================================================================
 Timing constraint: Default period analysis for Clock 'clk'
-  Clock period: 17.342ns (frequency: 57.663MHz)
-  Total number of paths / destination ports: 57281318 / 1176
+  Clock period: 17.611ns (frequency: 56.783MHz)
+  Total number of paths / destination ports: 78327891 / 1176
 -------------------------------------------------------------------------
-Delay:               17.342ns (Levels of Logic = 15)
+Delay:               17.611ns (Levels of Logic = 12)
   Source:            INSTANCE_PC/Output_3 (FF)
-  Destination:       INSTANCE_REGFILE/Mram_x2 (RAM)
+  Destination:       INSTANCE_REGFILE/Mram_x5 (RAM)
   Source Clock:      clk rising
   Destination Clock: clk rising
 
-  Data Path: INSTANCE_PC/Output_3 to INSTANCE_REGFILE/Mram_x2
+  Data Path: INSTANCE_PC/Output_3 to INSTANCE_REGFILE/Mram_x5
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
      FDE:C->Q             16   0.525   1.637  INSTANCE_PC/Output_3 (INSTANCE_PC/Output_3)
-     LUT6:I0->O           35   0.254   1.678  INSTANCE_PROGMEM/Mram__n004951 (INSTANCE_PROGMEM/_n0049<27>)
-     LUT4:I2->O            2   0.250   0.726  INSTANCE_IMMEXT/PWR_10_o_GND_10_o_OR_44_o_SW0 (N123)
-     LUT5:I4->O           18   0.254   1.343  INSTANCE_IMMEXT/PWR_10_o_GND_10_o_OR_44_o (INSTANCE_IMMEXT/PWR_10_o_GND_10_o_OR_44_o)
-     LUT6:I4->O            2   0.250   0.726  INSTANCE_IMMEXT/Mmux_immExtend11 (immExtend<0>)
-     LUT6:I5->O            1   0.254   0.000  INSTANCE_ALU/Maddsub_Input1[31]_Input1[31]_mux_15_OUT_lut<0> (INSTANCE_ALU/Maddsub_Input1[31]_Input1[31]_mux_15_OUT_lut<0>)
-     MUXCY:S->O            1   0.215   0.000  INSTANCE_ALU/Maddsub_Input1[31]_Input1[31]_mux_15_OUT_cy<0> (INSTANCE_ALU/Maddsub_Input1[31]_Input1[31]_mux_15_OUT_cy<0>)
-     MUXCY:CI->O           1   0.023   0.000  INSTANCE_ALU/Maddsub_Input1[31]_Input1[31]_mux_15_OUT_cy<1> (INSTANCE_ALU/Maddsub_Input1[31]_Input1[31]_mux_15_OUT_cy<1>)
-     MUXCY:CI->O           1   0.023   0.000  INSTANCE_ALU/Maddsub_Input1[31]_Input1[31]_mux_15_OUT_cy<2> (INSTANCE_ALU/Maddsub_Input1[31]_Input1[31]_mux_15_OUT_cy<2>)
-     XORCY:CI->O         106   0.206   2.227  INSTANCE_ALU/Maddsub_Input1[31]_Input1[31]_mux_15_OUT_xor<3> (INSTANCE_ALU/Input1[31]_Input1[31]_mux_15_OUT<3>)
-     LUT6:I5->O            2   0.254   0.834  INSTANCE_ALU/Mmux_Output261_1 (INSTANCE_ALU/Mmux_Output261)
-     LUT6:I4->O           14   0.250   1.235  INSTANCE_DATAMEM/Mmux_dataOut10222221_1 (INSTANCE_DATAMEM/Mmux_dataOut10222221)
-     LUT6:I4->O            1   0.250   0.682  Mmux_rdIn295 (Mmux_rdIn294)
-     LUT6:I5->O            1   0.254   0.682  Mmux_rdIn297 (Mmux_rdIn296)
-     LUT6:I5->O            1   0.254   0.682  Mmux_rdIn298 (Mmux_rdIn297)
-     LUT6:I5->O            2   0.254   0.725  Mmux_rdIn2911 (rdIn<6>)
-     RAM32M:DIA0               0.394          INSTANCE_REGFILE/Mram_x3
+     LUT6:I0->O           36   0.254   1.815  INSTANCE_PROGMEM/Mram__n004951 (INSTANCE_PROGMEM/_n0049<27>)
+     LUT3:I0->O            1   0.235   0.682  INSTANCE_DECODE/Mmux_aluSecMult11_SW0 (N242)
+     LUT6:I5->O           14   0.254   1.127  INSTANCE_DECODE/Mmux_aluSecMult11 (aluSecMult)
+     LUT5:I4->O            1   0.254   0.790  Mmux_aluSecond11_SW1 (N247)
+     LUT6:I4->O            1   0.250   0.000  INSTANCE_ALU/Maddsub_Input1[31]_Input1[31]_mux_15_OUT_lut<0> (INSTANCE_ALU/Maddsub_Input1[31]_Input1[31]_mux_15_OUT_lut<0>)
+     XORCY:LI->O         102   0.149   2.215  INSTANCE_ALU/Maddsub_Input1[31]_Input1[31]_mux_15_OUT_xor<0> (INSTANCE_ALU/Input1[31]_Input1[31]_mux_15_OUT<0>)
+     LUT6:I5->O            1   0.254   0.000  INSTANCE_ALU/Mmux_Output11_lut1 (INSTANCE_ALU/Mmux_Output11_lut1)
+     MUXCY:S->O           71   0.427   1.984  INSTANCE_ALU/Mmux_Output11_cy1 (aluResult<0>)
+     LUT6:I5->O           16   0.254   1.182  INSTANCE_DATAMEM/_n0855<5>1_1 (INSTANCE_DATAMEM/_n0855<5>1)
+     LUT6:I5->O            2   0.254   0.725  Mmux_rdIn1711 (Mmux_rdIn1710)
+     MUXF7:S->O            1   0.185   0.790  Mmux_rdIn1712_SW0_SW0 (N627)
+     LUT6:I4->O            2   0.250   0.725  Mmux_rdIn1712 (rdIn<24>)
+     RAM32M:DIA0               0.394          INSTANCE_REGFILE/Mram_x6
     ----------------------------------------
-    Total                     17.342ns (4.164ns logic, 13.178ns route)
-                                       (24.0% logic, 76.0% route)
+    Total                     17.611ns (3.939ns logic, 13.672ns route)
+                                       (22.4% logic, 77.6% route)
 
 =========================================================================
 Timing constraint: Default OFFSET IN BEFORE for Clock 'clk'
@@ -576,7 +584,7 @@ Offset:              3.149ns (Levels of Logic = 1)
 Timing constraint: Default OFFSET OUT AFTER for Clock 'clk'
   Total number of paths / destination ports: 282 / 8
 -------------------------------------------------------------------------
-Offset:              11.985ns (Levels of Logic = 7)
+Offset:              12.729ns (Levels of Logic = 7)
   Source:            INSTANCE_PC/Output_31 (FF)
   Destination:       test<7> (PAD)
   Source Clock:      clk rising
@@ -586,16 +594,16 @@ Offset:              11.985ns (Levels of Logic = 7)
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
      FDE:C->Q              4   0.525   1.259  INSTANCE_PC/Output_31 (INSTANCE_PC/Output_31)
-     LUT6:I0->O           11   0.254   1.315  INSTANCE_PROGMEM/_n0050<31>1 (INSTANCE_PROGMEM/_n0050<31>)
-     LUT6:I2->O            9   0.254   0.976  INSTANCE_PROGMEM/_n0050<31>5_3 (INSTANCE_PROGMEM/_n0050<31>52)
+     LUT6:I0->O            6   0.254   1.152  INSTANCE_PROGMEM/_n0050<31>1 (INSTANCE_PROGMEM/_n0050<31>)
+     LUT6:I2->O           58   0.254   1.883  INSTANCE_PROGMEM/_n0050<31>5 (INSTANCE_PROGMEM/_n0050)
      LUT2:I1->O           19   0.254   1.260  INSTANCE_PROGMEM/Mmux_instruction101 (instr<18>)
      RAM32X1D:DPRA3->DPO    3   0.235   0.874  INSTANCE_REGFILE/Mram_x71 (rd1<30>)
      LUT4:I2->O            1   0.250   0.682  Mmux_test71 (Mmux_test7)
      LUT6:I5->O            1   0.254   0.681  Mmux_test72 (test_6_OBUF)
      OBUF:I->O                 2.912          test_6_OBUF (test<6>)
     ----------------------------------------
-    Total                     11.985ns (4.938ns logic, 7.047ns route)
-                                       (41.2% logic, 58.8% route)
+    Total                     12.729ns (4.938ns logic, 7.791ns route)
+                                       (38.8% logic, 61.2% route)
 
 =========================================================================
 Timing constraint: Default path analysis
@@ -627,19 +635,19 @@ Clock to Setup on destination clock clk
                | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
 Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
 ---------------+---------+---------+---------+---------+
-clk            |   17.342|         |         |         |
+clk            |   17.611|         |         |         |
 ---------------+---------+---------+---------+---------+
 
 =========================================================================
 
 
-Total REAL time to Xst completion: 10.00 secs
-Total CPU time to Xst completion: 9.84 secs
+Total REAL time to Xst completion: 15.00 secs
+Total CPU time to Xst completion: 15.19 secs
  
 --> 
 
 
-Total memory usage is 377212 kilobytes
+Total memory usage is 377872 kilobytes
 
 Number of errors   :    0 (   0 filtered)
 Number of warnings :    2 (   0 filtered)

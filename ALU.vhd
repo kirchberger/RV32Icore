@@ -16,7 +16,7 @@ end ALU;
 architecture Behavioral of ALU is
 
 begin
-
+			
 	p_alu : process (Input1, Input2, condBranch, func3, func7) is
 	begin
 		if (condBranch = '1') then
@@ -68,8 +68,8 @@ begin
 				else 
 					Output <= STD_LOGIC_VECTOR(signed(Input1) - signed(Input2));
 				end if;
-			--elsif (func3 = "001") then -- SLL
-				--Output <= (Input1 SLL Input2(4 downto 0));
+			elsif (func3 = "001") then -- SLL
+				Output <= STD_LOGIC_VECTOR(shift_left(unsigned(Input1), to_integer(unsigned(Input2(4 downto 0)))));
 			elsif (func3 = "010") then -- SLT
 				Output(31 downto 1) <= "0000000000000000000000000000000";
 				if (signed(Input1) < signed(Input2)) then
@@ -86,12 +86,12 @@ begin
 				end if;
 			elsif (func3 = "100") then -- XOR
 				Output <= Input1 xor Input2;
-			--elsif (func3 = "101") then -- Right Shifts
-				--if (func7 = '0') then
-					--Output <= shift_right(unsigned(Input1), Input2 (4 downto 0));		
-				--else
-					--Output <= shift_right(signed(Input1), Input2 (4 downto 0));
-				--end if;
+			elsif (func3 = "101") then -- Right Shifts
+				if (func7 = '0') then
+					Output <= STD_LOGIC_VECTOR(shift_right(unsigned(Input1), to_integer(unsigned(Input2(4 downto 0)))));		
+				else
+					Output <= STD_LOGIC_VECTOR(shift_left(signed(Input1), to_integer(signed(Input2(4 downto 0)))));
+				end if;
 			elsif (func3 = "110") then -- OR
 				Output <= Input1 or Input2;
 			elsif (func3 = "111") then -- AND
