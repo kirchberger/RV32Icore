@@ -166,12 +166,10 @@
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
     </transform>
-    <transform xil_pn:end_ts="1769372686" xil_pn:in_ck="-5976899289792200201" xil_pn:name="TRANEXT_xstsynthesize_spartan6" xil_pn:prop_ck="-8689078031437176795" xil_pn:start_ts="1769372668">
+    <transform xil_pn:end_ts="1769558503" xil_pn:in_ck="-5976899289792200201" xil_pn:name="TRANEXT_xstsynthesize_spartan6" xil_pn:prop_ck="-8689078031437176795" xil_pn:start_ts="1769558477">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="WarningsGenerated"/>
       <status xil_pn:value="ReadyToRun"/>
-      <status xil_pn:value="OutOfDateForOutputs"/>
-      <status xil_pn:value="OutputChanged"/>
       <outfile xil_pn:name="_xmsgs/xst.xmsgs"/>
       <outfile xil_pn:name="topLevel.lso"/>
       <outfile xil_pn:name="topLevel.ngc"/>
@@ -193,6 +191,8 @@
     <transform xil_pn:end_ts="1769372690" xil_pn:in_ck="3577489429911261160" xil_pn:name="TRANEXT_ngdbuild_FPGA" xil_pn:prop_ck="2290999276613685975" xil_pn:start_ts="1769372686">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
+      <status xil_pn:value="OutOfDateForInputs"/>
+      <status xil_pn:value="InputChanged"/>
       <outfile xil_pn:name="_ngo"/>
       <outfile xil_pn:name="_xmsgs/ngdbuild.xmsgs"/>
       <outfile xil_pn:name="topLevel.bld"/>
@@ -203,6 +203,9 @@
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="WarningsGenerated"/>
       <status xil_pn:value="ReadyToRun"/>
+      <status xil_pn:value="OutOfDateForPredecessor"/>
+      <status xil_pn:value="OutOfDateForOutputs"/>
+      <status xil_pn:value="OutputChanged"/>
       <outfile xil_pn:name="_xmsgs/map.xmsgs"/>
       <outfile xil_pn:name="topLevel.pcf"/>
       <outfile xil_pn:name="topLevel_map.map"/>
@@ -217,6 +220,7 @@
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="WarningsGenerated"/>
       <status xil_pn:value="ReadyToRun"/>
+      <status xil_pn:value="OutOfDateForPredecessor"/>
       <outfile xil_pn:name="_xmsgs/par.xmsgs"/>
       <outfile xil_pn:name="topLevel.ncd"/>
       <outfile xil_pn:name="topLevel.pad"/>
@@ -232,6 +236,9 @@
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="WarningsGenerated"/>
       <status xil_pn:value="ReadyToRun"/>
+      <status xil_pn:value="OutOfDateForPredecessor"/>
+      <status xil_pn:value="OutOfDateForOutputs"/>
+      <status xil_pn:value="OutputChanged"/>
       <outfile xil_pn:name="_xmsgs/bitgen.xmsgs"/>
       <outfile xil_pn:name="topLevel.bgn"/>
       <outfile xil_pn:name="topLevel.bin"/>
@@ -245,6 +252,7 @@
     <transform xil_pn:end_ts="1769372732" xil_pn:in_ck="6444891855584850661" xil_pn:name="TRAN_postRouteTrce" xil_pn:prop_ck="445577401284416184" xil_pn:start_ts="1769372728">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
+      <status xil_pn:value="OutOfDateForPredecessor"/>
       <outfile xil_pn:name="_xmsgs/trce.xmsgs"/>
       <outfile xil_pn:name="topLevel.twr"/>
       <outfile xil_pn:name="topLevel.twx"/>

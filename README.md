@@ -4,6 +4,7 @@ Making a RISC-V core for the base instruction set in VHDL to learn VHDL and abou
 I will implement this on my Mimas V2 Spartan 6 board with Xilinx ISE.
 
 # ISA
+
 32 x registers
 4 core instruction formats (R,I,S,U)
 Types of instructions:
@@ -21,9 +22,8 @@ Environment call and breakpoints
 Instruction list is [here](https://five-embeddev.com/riscv-user-isa-manual/Priv-v1.12/instr-table.html)
 
 # Work 
-I decided to make a single cycle CPU
-Currently I am working on load and store instructions.
 
-
+Currently all the RV32I instructions have been implemented and verified on the development board.
+The next step is to write memory controllers for the sd card (SPI) and for the on board RAM.
 
 

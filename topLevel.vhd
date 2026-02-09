@@ -49,9 +49,6 @@ signal aluFunc7 : STD_LOGIC;
 signal immExtend : STD_LOGIC_VECTOR (31 downto 0);
 
 begin
-
-
-  
 	INSTANCE_PC : entity work.programCounter
 		port map (
 			pcNext,

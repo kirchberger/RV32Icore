@@ -426,3 +426,4 @@ map -intstyle ise -p xc6slx9-csg324-2 -w -logic_opt off -ol high -t 1 -xt 0 -reg
 par -w -intstyle ise -ol high -mt off topLevel_map.ncd topLevel.ncd topLevel.pcf 
 trce -intstyle ise -v 3 -s 2 -n 3 -fastpaths -xml topLevel.twx topLevel.ncd -o topLevel.twr topLevel.pcf -ucf topLevel.ucf 
 bitgen -intstyle ise -f topLevel.ut topLevel.ncd 
+xst -intstyle ise -ifn "/home/Alex/Documents/dailyprojects/RV32Icore/topLevel.xst" -ofn "/home/Alex/Documents/dailyprojects/RV32Icore/topLevel.syr" 
